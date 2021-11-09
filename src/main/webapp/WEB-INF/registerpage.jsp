@@ -4,42 +4,41 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Register as new User
+         Register a new user
     </jsp:attribute>
+
     <jsp:attribute name="footer">
     </jsp:attribute>
+
     <jsp:body>
-        <div style="margin-top: 5em;">
-            <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="email">Email</label>
-                    <div class="col-sm-4">
-                        <input id="email" class="form-control" type="text" name="email" value="${param.email}" placeholder="Enter a valid email">
-                    </div>
+        <form action="${pageContext.request.contextPath}/fc/RegisterCommand" method="post" class="mb-3 d-flex flex-column bodyBg">
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <span class="loginEmail loginFormText input-group-text">Email</span>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password1">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter your password">
-                    </div>
+                <input type="text" class="loginInput form-control" placeholder="Enter a valid email"><!-- aria-describedby="basic-addon1">-->
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <span class="loginFormText input-group-text">Password</span>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password2">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Repeat the password">
-                    </div>
+                <input type="password" class="loginInput form-control" placeholder="Enter your password"><!-- aria-describedby="basic-addon1">-->
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <span class="loginFormText input-group-text">Password</span>
                 </div>
+                <input type="password" class="loginInput form-control" placeholder="Repeat the password"><!-- aria-describedby="basic-addon1">-->
+            </div>
+            <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
+                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5" href="">Signup</a>
+            </div>
+        </form>
 
-                <input class="btn btn-primary" type="submit" type="submit" value="Submit">
-            </form>
-
-            <c:if test="${requestScope.error != null }">
-                <p style="color:red">
-                        ${requestScope.error}
-                </p>
-            </c:if>
-        </div>
+        <c:if test="${requestScope.error != null }">
+            <p style="color:red">
+                    ${requestScope.error}
+            </p>
+        </c:if>
     </jsp:body>
 </t:genericpage>
-
-

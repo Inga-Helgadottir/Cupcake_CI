@@ -11,18 +11,37 @@
     </jsp:attribute>
 
     <jsp:body>
+        <div class="mb-3 d-flex flex-column bodyBg">
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <span class="loginEmail loginFormText input-group-text">Email:</span>
+                </div>
+                <input type="text" class="loginInput form-control" placeholder="fake@email.com" aria-label="Email"><!-- aria-describedby="basic-addon1">-->
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <span class="loginFormText input-group-text">Password:</span>
+                </div>
+                <input type="text" class="loginInput form-control" placeholder="**********" aria-label="Password"><!-- aria-describedby="basic-addon1">-->
+            </div>
+            <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
+                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Login</a>
+                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Login som admin</a>
+            </div>
+        </div>
+        <!--
         <div style="margin-top: 5em;" class="container">
             <form name="login" action="${pageContext.request.contextPath}/fc/logincommand"  method="POST">
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="email">Email</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="text" name="email" placeholder="someone@nowhere.com">
+                        <input class="form-control" type="text" name="email" id="email" placeholder="someone@nowhere.com">
                     </div>
                 </div>
                 <div class="row mb-3">
                     <label class="col-sm-1 col-form-label" for="password">Password</label>
                     <div class="col-sm-4">
-                        <input class="form-control" type="password" name="password" placeholder="sesam">
+                        <input class="form-control" type="password" name="password" id="password" placeholder="sesam">
                     </div>
                 </div>
                 <c:if test="${requestScope.error != null }">
@@ -36,8 +55,6 @@
                 </c:if>
                 <button class="btn btn-primary" type="submit" value="Login">Sign in</button>
             </form>
-
-
-        </div>
+        </div>-->
     </jsp:body>
 </t:genericpage>

@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -75,11 +76,6 @@
 </body>
 </html>
 <!-- Bootsrtap, things i will most likely use
-<div class="jumbotron">
-
-</div>
-
-<button type="button" class="btn btn-primary">Primary</button> == blue btn
 
 <div class="input-group mb-3"> == select
     <div class="input-group-prepend">

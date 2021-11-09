@@ -16,6 +16,7 @@
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -24,13 +25,14 @@
         example: https://getbootstrap.com/docs/5.0/examples/pricing/
     -->
 <header>
-    <section class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white border-bottom rounded headerSection">
+    <section class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 bg-white headerSection">
         <div class="h5 my-0 me-md-auto fw-normal">
             <p class="currentPage">
                 <jsp:invoke fragment="header"/>
             </p>
         </div>
         <nav class="my-2 my-md-0 me-md-3">
+            <a class="p-2 text-dark text-decoration-none saldo" href="#">Saldo: ----</a>
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark text-decoration-none" href="<%=request.getContextPath()%>">Home</a>
             </c:if>
@@ -38,7 +40,7 @@
             <a class="p-2 text-dark text-decoration-none" href="#">Profile</a>
             <a class="p-2 text-dark text-decoration-none" href="#">About</a>
         </nav>
-        <div>
+        <div class="btns">
 
             <c:if test="${sessionScope.user != null }">
                 ${sessionScope.user.email}
@@ -62,20 +64,13 @@
         </div>
         </c:if>
     </section>
-    <img src="images/olskercupcakes.png" alt="Olsker cupcakes mums filbaba logo" class="headerImg mb-3">
+    <img src="${pageContext.request.contextPath}/images/olskercupcakes.png" alt="Olsker cupcakes mums filbaba logo" class="headerImg mb-3">
 </header>
 
-<div id="body" class="container" style="min-height: 20vh;">
+<div id="body">
     <jsp:doBody/>
 </div>
 
-<!-- Footer -->
-<div class="container">
-    <br>
-    <hr>
-    <br>
-    <jsp:invoke fragment="footer"/>
-</div>
 
 </body>
 </html>

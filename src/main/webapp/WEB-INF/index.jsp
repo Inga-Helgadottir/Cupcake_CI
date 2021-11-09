@@ -14,11 +14,16 @@
 
     <jsp:body>
 
-        <div>
-            <h2>Our Cool Site</h2>
+        <div class="velkommenDiv">
+            <h2 class="display-4">Velkommen ombord</h2>
 
-            <div style="margin-top: 3em;margin-bottom: 3em;">
-                Main page for this 2. semester start project used at cphbusiness.dk
+            <p class="lead velkommenP">
+                Øens bedste cupcakes. Vælg og bestil her:
+            </p>
+
+            <div class="btnOptions">
+                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Se udvalg</a>
+                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Bestil cupcakes</a>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">

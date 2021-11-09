@@ -18,6 +18,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bestil.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/kurv.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>

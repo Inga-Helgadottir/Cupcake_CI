@@ -1,0 +1,12 @@
+.headerImg{
+    width: 100%;
+    height:auto;
+}
+.headerSection{
+    background-color: #dedede!important;
+    margin:0.5%;
+}
+.currentPage{
+    font-size: larger;
+    margin:0;
+}

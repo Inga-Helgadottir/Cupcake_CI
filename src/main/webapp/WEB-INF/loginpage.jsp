@@ -25,8 +25,8 @@
                 <input type="password" class="loginInput form-control" placeholder="**********">
             </div>
             <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
-                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Login</a>
-                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Login som admin</a>
+                <a type="submit" class="btn btn-primary btn-lg mb-5">Login</a>
+                <a type="submit" class="btn btn-primary btn-lg mb-5">Login som admin</a>
             </div>
         </form>
 

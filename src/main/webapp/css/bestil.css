@@ -1,0 +1,15 @@
+.bestilSelect, .kurvBtn {
+    width: 15%;
+    height: 3rem;
+    padding: 2px 23px;
+    font-size: 20px;
+}
+.kurvBtn{
+    margin-right: 5%;
+}
+.bestilH2{
+    font-size: 50px;
+}
+.bestilP{
+    font-size: 25px;
+}

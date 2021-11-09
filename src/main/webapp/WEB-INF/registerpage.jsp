@@ -31,7 +31,7 @@
                 <input type="password" class="loginInput form-control" placeholder="Repeat the password"><!-- aria-describedby="basic-addon1">-->
             </div>
             <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
-                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5" href="">Signup</a>
+                <a type="submit" class="btn btn-primary btn-lg mb-5" href="">Signup</a>
             </div>
         </form>
 

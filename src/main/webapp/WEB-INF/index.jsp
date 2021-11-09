@@ -22,8 +22,8 @@
             </p>
 
             <div class="btnOptions">
-                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Se udvalg</a>
-                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Bestil cupcakes</a>
+                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
+                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
@@ -37,7 +37,6 @@
                     are logged in as a customer</p>
                 <p><a href="fc/customerpage">Customer Page</a>
             </c:if>
-
         </div>
 
     </jsp:body>

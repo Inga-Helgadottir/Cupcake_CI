@@ -1,7 +1,6 @@
 <%@tag description="Overall Page template" pageEncoding="UTF-8" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
-
 <%@attribute name="header" fragment="true" %>
 <%@attribute name="footer" fragment="true" %>
 
@@ -18,6 +17,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bestil.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -33,11 +33,11 @@
             </p>
         </div>
         <nav class="my-2 my-md-0 me-md-3">
-            <a class="p-2 text-dark text-decoration-none saldo" href="#">Saldo: ----</a>
+            <a class="p-2 text-dark text-decoration-none saldo">Saldo: ----</a>
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark text-decoration-none" href="<%=request.getContextPath()%>">Home</a>
             </c:if>
-            <a class="p-2 text-dark text-decoration-none" href="#">Orders</a>
+            <a class="p-2 text-dark text-decoration-none" href="${pageContext.request.contextPath}/fc/orderpage">Orders</a>
             <a class="p-2 text-dark text-decoration-none" href="#">Profile</a>
             <a class="p-2 text-dark text-decoration-none" href="#">About</a>
         </nav>

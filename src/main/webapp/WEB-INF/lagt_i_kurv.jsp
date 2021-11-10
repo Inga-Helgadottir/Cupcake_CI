@@ -18,8 +18,8 @@
             <h2 class="display-4 kurvH2">Bestilling lagt i kurv</h2>
 
             <div class="btnOptions"><!--------------------------------add href here------------------------------------------>
-                <button href="${pageContext.request.contextPath}/fc/index" type="submit" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Shop videre</button>
-                <button href="" type="submit" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Se order</button>
+                <a href="${pageContext.request.contextPath}/fc/index" type="submit" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Shop videre</a>
+                <a href="" type="submit" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Se order</a>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">

@@ -2,13 +2,14 @@
     margin-bottom: 2.5em;
     font-size: 25px;
 }
-.btnOptions button{
+.btnOptions button, .btnOptions a{
     padding: 9px 38px;
     margin-right: 72px;
     font-size: 20px;
 }
-/*det her skulle være i login css
-men for et eller anden grund virker de her linjer ikke derinde*/
+/*det her skulle have være i login css
+men for et eller anden grund virker de her linjer ikke derinde
+men de andre linjer derinde virker */
 #btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
     width: 26.5%!important;
 }

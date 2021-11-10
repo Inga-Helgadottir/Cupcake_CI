@@ -13,7 +13,7 @@
     </jsp:attribute>
 
     <jsp:body>
-        <div class="bodyBg">
+         <div class="bodyBg">
             <h2 class="display-4">Velkommen ombord</h2>
 
             <p class="lead velkommenP">

@@ -7,3 +7,20 @@
 {
     font-size: smaller;
 }
+html {
+    font-family: "segoe UI", "segoe U";
+    overflow-y: scroll;
+    max-width:1366px;
+    margin: 0 auto;
+}
+#body{
+    min-height: 20vh;
+    width:100%;
+    margin:2px;
+}
+.bodyBg{
+    background-color: #dedede!important;
+    margin: 8px!important;
+    border: solid 1px black!important;
+    padding: 26px 0px 80px 81px!important;
+}

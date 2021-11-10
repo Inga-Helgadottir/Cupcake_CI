@@ -1,0 +1,48 @@
+headerImg{
+    width: 100%;
+    height:auto;
+}
+.headerSection{
+    background-color: #dedede!important;
+    margin: 0.1% 0.1% 0.3% 0.1%;
+    border: solid 1px black;
+}
+.currentPage{
+    font-size: larger;
+    margin:0;
+}
+.saldo{
+    color:#2ABD34!important;
+}
+nav a, .currentPage{
+    font-size:30px;
+}
+.btns a{
+    font-size:20px;
+    padding: 6px 10px;
+}
+
+@media only screen and (max-width: 900px) {
+    .btns a{
+        font-size:15px!important;
+    }
+    nav a, .currentPage{
+        font-size:20px;
+    }
+}
+@media only screen and (max-width: 454px) {
+    .btns a{
+        font-size:10px!important;
+    }
+    nav a, .currentPage{
+        font-size:15px;
+    }
+}
+@media only screen and (max-width: 368px) {
+    .btns a{
+        font-size:5px!important;
+    }
+    nav a, .currentPage{
+        font-size:10px;
+    }
+}

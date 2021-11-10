@@ -1,0 +1,52 @@
+.loginInput, .loginFormText{
+    font-family: "helvetica Neue", "sans-serif";
+    font-size: 16px;
+    padding:20px;
+    margin:0!important;
+}
+.loginInput{
+    width:50%!important;
+}
+.loginEmail{
+    padding: 20px 31px 20px 31px;
+}
+.btnOptionsLogin a{
+    width: 26.5%;
+}
+@media only screen and (max-width: 970px) {
+    .btnOptionsLogin a{
+        width: 29.5%;
+    }
+    .loginInput{
+        width:55%!important;
+    }
+}
+@media only screen and (max-width: 882px) {
+    .btnOptionsLogin a{
+        width: 31%;
+    }
+    .loginInput{
+        width:58%!important;
+    }
+}
+@media only screen and (max-width: 844px) {
+    .btnOptionsLogin a{
+        width: 36%;
+    }
+    .loginInput{
+        width:67%!important;
+    }
+}
+@media only screen and (max-width: 741px) {
+    .btnOptionsLogin a{
+        width: 39%;
+    }
+    .loginInput{
+        width:72%!important;
+    }
+}
+@media only screen and (max-width: 705px) {
+    .bodyBg {
+        padding: 26px 0px 80px 30px!important;
+    }
+}

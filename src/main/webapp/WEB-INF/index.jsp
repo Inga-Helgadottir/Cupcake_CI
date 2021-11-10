@@ -13,29 +13,7 @@
     </jsp:attribute>
 
     <jsp:body>
-<%--        change to get from DB------------------------------%>
-        <div class="bodyBgOrders">
-            <h2 class="display-4">Din inkøbskurv:</h2>
 
-<%--            here--------------------------------------------%>
-            <p>Topping: Rasberry (5 kr.)</p>
-            <p>Bottom: Chocolate (5 kr.)</p>
-            <select class="andtal">
-                <option selected>Antal:</option>
-                <option value="1">One</option>
-                <option value="2">Two</option>
-                <option value="3">Three</option>
-            </select>
-            <a class="fjernBtn btn btn-warning">Fjern</a>
-        </div>
-        <div class="bodyBgOrders">
-            <h2 class="display-4">Total</h2>
-            <p>Subtotal:<span class="pris">20kr</span></p>
-            <p>Levering:<span class="pris">0kr</span></p>
-            <p>I alt:<span class="pris">20kr</span></p>
-            <a class="tjekBtn btn btn-warning">Tjek ud</a>
-        </div>
-        <!--
         <div class="bodyBg">
             <h2 class="display-4">Velkommen ombord</h2>
 
@@ -59,7 +37,7 @@
                     are logged in as a customer</p>
                 <p><a href="fc/customerpage">Customer Page</a>
             </c:if>
-        </div>-->
+        </div>
 
     </jsp:body>
 </t:genericpage>

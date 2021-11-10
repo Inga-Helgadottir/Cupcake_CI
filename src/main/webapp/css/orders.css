@@ -1,5 +1,88 @@
 .bodyBgOrders{
     background-color: #dedede!important;
+    margin: 8px 0px 8px 16px!important;
+    border: solid 1px black!important;
+}
+.bodyBgOrders2{
+    background-color: #dedede!important;
     margin: 8px!important;
     border: solid 1px black!important;
+    padding: 2% 5%;
+    width: 39%;
+}
+.cupcakeKind{
+    font-size: 30px;
+}
+.antal{
+    font-size: 20px;
+    width: 49%;
+    border:none;
+    padding: 1% 2%;
+    height: 9%;
+}
+.fjernBtn, .tjekBtn{
+    color:white;
+}
+.tjekBtn{
+    margin-top: 25.5%!important;
+}
+.ordersGrid{
+    width:100%;
+}
+.cupcakeKindContainer{
+    padding-top: 1.5rem;
+}
+
+@media only screen and (max-width: 1319px) {
+    .orderH2{
+        font-size: 45px;
+    }
+    .cupcakeKind{
+        font-size: 25px;
+    }
+    .antal{
+        font-size: 15px;
+    }
+    .cupcakeKindContainer{
+         padding-top: 1rem;
+    }
+    .aCupcakeImg{
+        margin-right: 5%;
+        width:99%;
+    }
+}
+@media only screen and (max-width: 1319px) {
+    .bodyBgOrders{
+        width:99%!important;
+    }
+    .bodyBgOrders2{
+        margin-left: 16px!important;
+        width:99%!important;
+    }
+}
+@media only screen and (max-width: 803px) {
+    .inkobskurv{
+        display: flex;
+        flex-direction: column!important;
+        place-items: start!important;
+        padding-top:2%;
+    }
+    .fjernBtn{
+        margin: 20% 0!important;
+    }
+    .antal {
+        font-size: 15px!important;
+        margin-top: 6%!important;
+    }
+    .fillAllSpace{
+        width:100%;/*-------------------------------*/
+    }
+}
+@media only screen and (max-width: 639px) {
+    .cupcakeKind{
+        font-size: 20px;
+    }
+    .inkobskurv{
+        place-items: start;
+    }
 }

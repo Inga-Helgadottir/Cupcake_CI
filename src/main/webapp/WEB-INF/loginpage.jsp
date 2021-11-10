@@ -24,9 +24,9 @@
                 </div>
                 <input type="password" class="loginInput form-control" placeholder="**********">
             </div>
-            <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
-                <a type="submit" class="btn btn-primary btn-lg mb-5">Login</a>
-                <a type="submit" class="btn btn-primary btn-lg mb-5">Login som admin</a>
+            <div class="btnOptions d-flex justify-content-start">
+                <button type="submit" id="btnOptionsLogin" class="btn btn-primary btn-lg mb-5">Login</button>
+                <button type="submit" id="btnOptionsLogin2" class="btn btn-primary btn-lg mb-5">Login som admin</button>
             </div>
         </form>
 

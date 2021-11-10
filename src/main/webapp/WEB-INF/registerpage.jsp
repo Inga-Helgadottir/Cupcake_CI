@@ -30,8 +30,8 @@
                 </div>
                 <input type="password" class="loginInput form-control" placeholder="Repeat the password"><!-- aria-describedby="basic-addon1">-->
             </div>
-            <div class="btnOptions btnOptionsLogin d-flex justify-content-start">
-                <a type="submit" class="btn btn-primary btn-lg mb-5" href="">Signup</a>
+            <div class="btnOptions d-flex justify-content-start">
+                <button type="submit" id="btnSignup" class="btn btn-primary btn-lg mb-5" href="">Signup</button>
             </div>
         </form>
 

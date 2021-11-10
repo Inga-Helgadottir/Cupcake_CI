@@ -21,8 +21,8 @@
             </p>
 
             <div class="btnOptions">
-                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
-                <a type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
+                <button type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</button>
+                <button type="submit" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</button>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">

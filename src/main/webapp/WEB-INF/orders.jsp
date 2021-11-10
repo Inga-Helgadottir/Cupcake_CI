@@ -16,7 +16,7 @@
 <%--        change to get from DB------------------------------%>
         <div class="bodyBgOrders">
             <h2 class="display-4">Din inkøbskurv:</h2>
-
+            <img class="aCupcakeImg" src="${pageContext.request.contextPath}/images/cupcake_pic.png"
 <%--            here--------------------------------------------%>
             <p>Topping: Rasberry (5 kr.)</p>
             <p>Bottom: Chocolate (5 kr.)</p>
@@ -33,33 +33,8 @@
             <p>Subtotal:<span class="pris">20kr</span></p>
             <p>Levering:<span class="pris">0kr</span></p>
             <p>I alt:<span class="pris">20kr</span></p>
-            <a class="tjekBtn btn btn-warning">Tjek ud</a>
+            <a class="tjekBtn btn btn-danger">Tjek ud</a>
         </div>
-        <!--
-        <div class="bodyBg">
-            <h2 class="display-4">Velkommen ombord</h2>
-
-            <p class="lead velkommenP">
-                Øens bedste cupcakes. Vælg og bestil her:
-            </p>
-
-            <div class="btnOptions">
-                <a class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
-                <a class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
-            </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
-
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
-        </div>-->
 
     </jsp:body>
 </t:genericpage>

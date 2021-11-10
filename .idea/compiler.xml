@@ -6,16 +6,16 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="Cupcake" />
+        <module name="cupcake_t" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="Cupcake" target="8" />
+      <module name="cupcake_t" target="8" />
     </bytecodeTargetLevel>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
-      <module name="Cupcake" options="-endorseddirs C:\Users\cej12\Skrivebord\cupcake_t\cupcake_t\target/endorsed" />
+      <module name="cupcake_t" options="-endorseddirs C:\Users\cej12\Skrivebord\cupcake_t\cupcake_t\target/endorsed" />
     </option>
   </component>
 </project>

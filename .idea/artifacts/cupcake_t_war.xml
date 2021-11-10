@@ -1,14 +1,14 @@
 <component name="ArtifactManager">
-  <artifact type="war" name="Cupcake:war">
+  <artifact type="war" name="cupcake_t:war">
     <output-path>$PROJECT_DIR$/target</output-path>
     <properties id="maven-jee-properties">
       <options>
-        <module>Cupcake</module>
+        <module>cupcake_t</module>
         <packaging>war</packaging>
       </options>
     </properties>
-    <root id="archive" name="sem2-startcode-1.0-SNAPSHOT.war">
-      <element id="artifact" artifact-name="Cupcake:war exploded" />
+    <root id="archive" name="cupcake_t-1.0-SNAPSHOT.war">
+      <element id="artifact" artifact-name="cupcake_t:war exploded" />
     </root>
   </artifact>
 </component>

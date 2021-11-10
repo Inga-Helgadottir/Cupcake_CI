@@ -22,22 +22,22 @@
             </p>
 
             <div class="btnOptions">
-                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="${pageContext.request.contextPath}/fc/orderpage">Bestil cupcakes</a>
+                <a href="${pageContext.request.contextPath}/fc/orderpage" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Bestil cupcakes</a>
 
-                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Se udvalg</a>
+                <a href="#" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Se udvalg</a>
 
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">
                 <p style="font-size: larger">This is what you can do,
                     since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
+                 <p><a href="${pageContext.request.contextPath}/fc/employeepage">Employee Page</a>
              </c:if>
 
              <c:if test="${sessionScope.role == 'customer' }">
                 <p style="font-size: larger">This is what you can do, since your
                     are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
+                <p><a href="${pageContext.request.contextPath}/fc/customerpage">Customer Page</a>
             </c:if>
 
         </div>

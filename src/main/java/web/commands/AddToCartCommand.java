@@ -36,17 +36,21 @@ public class AddToCartCommand extends CommandProtectedPage {
             cupcake.setBot_price(bot.getPrice());
             cupcake.setTop_price(top.getPrice());
             cupcake.setPrice(price);
-            List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("ShoppingCart");
+
+            List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
+
             if (shoppingCart == null) {
                 shoppingCart = new ArrayList<>();
             }
             shoppingCart.add(cupcake);
+            request.getSession().setAttribute("shoppingCart", shoppingCart);
+
             int temp = 0;
             for (Cupcake c: shoppingCart) {
                 temp += c.getPrice();
             }
             request.getSession().setAttribute("total", temp);
-            request.getSession().setAttribute("shoppingCart", shoppingCart);
+
             return pageToShow;
 
         } catch (NumberFormatException | UserException ex) {

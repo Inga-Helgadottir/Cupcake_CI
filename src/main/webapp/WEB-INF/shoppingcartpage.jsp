@@ -32,8 +32,8 @@
                         <div class="col-6 d-flex flex-column justify-content-around fillAllSpace">
 
                             <div class="cupcakeKindContainer">
-                                <p class="cupcakeKind">Topping: ${cupcake.top} (${cupcake.top_price})</p>
-                                <p class="cupcakeKind">Bottom: ${cupcake.bot} (${cupcake.bot_price})</p>
+                                <p class="cupcakeKind">Topping: ${cupcake.top} ${cupcake.top_price}kr</p>
+                                <p class="cupcakeKind">Bottom: ${cupcake.bot} ${cupcake.bot_price}kr</p>
                             </div>
 
                             <select class="bestilSelect antal">
@@ -48,27 +48,24 @@
                     </div>
                 </div>
                     <%---------------here-----------------------------------------------------------------------%>
-                <div class="bodyBgOrders2 col-lg-4">
-                    <div class="d-flex flex-column justify-content-around">
-                        <h2 class="display-4 mb-3">Total</h2>
-                        <p class="cupcakeKind d-flex justify-content-between">Subtotal:
-                            <span class="pris">${sessionScope.total}kr</span>
-                        </p>
-                        <p class="cupcakeKind d-flex justify-content-between">Levering:
-                            <span class="pris">0kr</span>
-                        </p>
-                        <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
-                            <span class="pris">${sessionScope.total}kr</span>
-                        </p>
-                        <a class="tjekBtn btn btn-danger">Tjek ud</a>
-                    </div>
-                </div>
-
             </section>
-
-
         </c:forEach>
-
+        
+        <div class="bodyBgOrders2 col-lg-4">
+            <div class="d-flex flex-column justify-content-around">
+                <h2 class="display-4 mb-3">Total</h2>
+                <p class="cupcakeKind d-flex justify-content-between">Subtotal:
+                    <span class="pris">${sessionScope.total}kr</span>
+                </p>
+                <p class="cupcakeKind d-flex justify-content-between">Levering:
+                    <span class="pris">0kr</span>
+                </p>
+                <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
+                    <span class="pris">${sessionScope.total}kr</span>
+                </p>
+                <a class="tjekBtn btn btn-danger">Tjek ud</a>
+            </div>
+        </div>
 
     </jsp:body>
 </t:genericpage>

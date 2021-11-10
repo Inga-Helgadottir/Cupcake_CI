@@ -21,8 +21,9 @@
             </p>
 
             <div class="btnOptions">
-                <a class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
-                <a class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
+                <!-- her mangler der en href----------------------------------------------->
+                <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
+                <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
             </div>
 
             <c:if test="${sessionScope.role == 'employee' }">

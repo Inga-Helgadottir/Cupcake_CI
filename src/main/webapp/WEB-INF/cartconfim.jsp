@@ -20,7 +20,7 @@
             <div class="btnOptions">
                 <a href="${pageContext.request.contextPath}/fc/orderpage" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Shop videre</a>
 
-                <a href="#" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Gå til tjek ud/kurv</a>
+                <a href="${pageContext.request.contextPath}/fc/cartpage" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Gå til tjek ud/kurv</a>
             </div>
 
 

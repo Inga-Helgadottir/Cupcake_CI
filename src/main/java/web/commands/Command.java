@@ -31,7 +31,7 @@ public abstract class Command
 
 
         commands.put("orderpage", new CommandUnprotectedPage("orderpage"));
-
+        commands.put("cartpage", new CommandUnprotectedPage("shoppingcartpage"));
 
         commands.put("addtocart", new AddToCartCommand("cartconfim","customer"));
     }

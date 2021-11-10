@@ -7,12 +7,38 @@ public class Cupcake {
     int amount;
     String description;
     int price;
-
+    int bot_price;
+    int top_price;
 
     public Cupcake(String top, String bot, int amount) {
         this.top = top;
         this.bot = bot;
         this.amount = amount;
+    }
+
+
+    public String getBot() {
+        return bot;
+    }
+
+    public void setBot(String bot) {
+        this.bot = bot;
+    }
+
+    public int getBot_price() {
+        return bot_price;
+    }
+
+    public void setBot_price(int bot_price) {
+        this.bot_price = bot_price;
+    }
+
+    public int getTop_price() {
+        return top_price;
+    }
+
+    public void setTop_price(int top_price) {
+        this.top_price = top_price;
     }
 
     public String getTop() {
@@ -23,13 +49,6 @@ public class Cupcake {
         this.top = top;
     }
 
-    public String getBottom() {
-        return bot;
-    }
-
-    public void setBottom(String bottom) {
-        this.bot = bottom;
-    }
 
     public int getAmount() {
         return amount;

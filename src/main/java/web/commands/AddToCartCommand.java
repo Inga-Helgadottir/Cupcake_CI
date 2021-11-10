@@ -33,12 +33,19 @@ public class AddToCartCommand extends CommandProtectedPage {
             Bot bot = cupcakeFacade.getBot(botId);
             Cupcake cupcake = new Cupcake(top.getName(), bot.getName(), amount);
             int price = top.getPrice() + bot.getPrice();
+            cupcake.setBot_price(bot.getPrice());
+            cupcake.setTop_price(top.getPrice());
             cupcake.setPrice(price);
             List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("ShoppingCart");
             if (shoppingCart == null) {
                 shoppingCart = new ArrayList<>();
             }
             shoppingCart.add(cupcake);
+            int temp = 0;
+            for (Cupcake c: shoppingCart) {
+                temp += c.getPrice();
+            }
+            request.getSession().setAttribute("total", temp);
             request.getSession().setAttribute("shoppingCart", shoppingCart);
             return pageToShow;
 

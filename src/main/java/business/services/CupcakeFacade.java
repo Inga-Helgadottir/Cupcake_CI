@@ -21,11 +21,9 @@ public class CupcakeFacade {
         return cupcakeMapper.getBot(botId);
     }
 
-
     public Top getTop(int topId) throws UserException {
         return cupcakeMapper.getTop(topId);
     }
-
 
     public List<Bot> getAllBottoms() throws UserException {
         return cupcakeMapper.getAllBots();

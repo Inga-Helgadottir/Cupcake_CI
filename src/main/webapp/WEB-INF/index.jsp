@@ -22,7 +22,7 @@
             </p>
 
             <div class="btnOptions">
-                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="fc/orderpage">Bestil cupcakes</a>
+                <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="${pageContext.request.contextPath}/fc/orderpage">Bestil cupcakes</a>
 
                 <a type="button" class="btn btn-sm btn-primary btn-lg mb-5" href="">Se udvalg</a>
 

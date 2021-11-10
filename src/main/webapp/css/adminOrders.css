@@ -1,0 +1,29 @@
+.seeAllOrders{
+    width:95%;
+    height:20%;
+    background-color: white;
+    padding:5%;
+}
+.adminOrderBtns{
+    width: 95%;
+}
+@media only screen and (max-width: 1224px){
+    .btnAdminOrders {
+        width: 40% !important;
+    }
+}
+@media only screen and (max-width: 1224px){
+    .btnAdminOrders {
+        width: 46% !important;
+    }
+}
+@media only screen and (max-width: 654px){
+    .adminOrderBtns{
+        display: flex!important;
+        flex-direction: column!important;
+    }
+    .btnAdminOrders {
+        margin-bottom: 5% !important;
+        width:100% !important;
+    }
+}

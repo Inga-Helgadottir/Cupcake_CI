@@ -17,8 +17,8 @@
             <h2 class="display-4 mb-3 orderH2">Admin page:</h2>
             <div class="btnOptions d-flex justify-content-around flex-column mt-4">
                 <!--------------------------------add href here------------------------------------------>
-                <a href="" class="btnProfile btn btn-sm btn-primary btn-lg mb-5">Se alle ordre</a>
-                <a href="" class="btnProfile btn btn-sm btn-primary btn-lg mb-5">Se alle kunder</a>
+                <a href="" class="btnProfile btn btn-primary btn-lg mb-5">Se alle ordre</a>
+                <a href="" class="btnProfile btn btn-primary btn-lg mb-5">Se alle kunder</a>
             </div>
         </div>
 

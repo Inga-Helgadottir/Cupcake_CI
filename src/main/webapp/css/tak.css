@@ -1,0 +1,18 @@
+.takH2{
+    font-size: 50px;
+    font-weight: bold;
+}
+.bodyBgTak{
+    background-color: #dedede!important;
+    margin: 8px!important;
+    border: solid 1px black!important;
+    padding: 80px 0px 80px 0px!important;
+}
+#btnTak{
+    margin:50px 0 0 0!important;
+}
+@media only screen and (max-width: 520px) {
+    .takH2{
+        font-size: 29px;
+    }
+}

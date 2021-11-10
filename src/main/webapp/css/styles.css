@@ -17,6 +17,7 @@ html {
     min-height: 20vh;
     width:100%;
     margin:2px;
+    box-sizing: border-box;
 }
 .bodyBg{
     background-color: #dedede!important;

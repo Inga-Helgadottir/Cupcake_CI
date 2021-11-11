@@ -21,7 +21,7 @@
             </p>
 
             <div class="btnOptions">
-                <!-- her mangler der en href----------------------------------------------->
+                 <!--her mangler der en href----------------------------------------------------->
                 <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
                 <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
             </div>
@@ -37,7 +37,7 @@
                     are logged in as a customer</p>
                 <p><a href="fc/customerpage">Customer Page</a>
             </c:if>
-        </div>
+        </div>-
 
     </jsp:body>
 </t:genericpage>

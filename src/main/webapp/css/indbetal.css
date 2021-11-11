@@ -1,0 +1,78 @@
+/*.indbetalForm{*/
+/*    display: grid!important;*/
+/*    grid-template-columns: 60% 40%;*/
+/*    grid-template-rows: auto;*/
+/*    gap: 1%;*/
+/*}*/
+/*.indbetalFormItem1{}*/
+/*.indbetalFormItem2{*/
+/*    grid-row:2;*/
+/*    grid-column: 1;*/
+/*}*/
+/*.indbetalFormItem3{*/
+/*    grid-row:3;*/
+/*    grid-column: 1;*/
+/*}*/
+/*.indbetalFormItem4{*/
+/*    grid-row: 2;*/
+/*    grid-column: 2;*/
+/*}*/
+/*.indbetalFormItem5{*/
+/*    grid-row: 3;*/
+/*    grid-column: 2;*/
+/*    place-items: end;*/
+/*}*/
+/*
+check in smaller screens----------------
+*/
+.indbetalBtn{
+    margin-right: 10%;
+    width:89%;
+    padding: 9px 38px;
+    font-size: 20px;
+    justify-content: end;
+}
+.inputIndbetal{
+    width:100%;
+    font-size: 16px;
+    padding:20px;
+}
+.indtastBelobInput{
+    margin-right: 10%;
+    justify-content: end;
+}
+.addMarginIndbetal{
+    margin: 2rem 0!important;
+}
+.indbetalFormText{
+    font-size: 16px;
+    padding:20px;
+    margin:0!important;
+}
+@media only screen and (max-width: 992px) {
+    .indbetalPengeContainer{
+        display: flex!important;
+        flex-direction: column!important;
+    }
+    .indtastBelobInput{
+        width: 100%;
+    }
+    .indbetalInputs{
+        width:90%;
+    }
+    .indtastBelobInput{
+        margin-right: 0!important;
+    }
+    .indbetalBtn{
+         margin-right: 0!important;
+         width:100%;
+     }
+}
+@media only screen and (max-width: 504px) {
+    .inputIndbetal{
+        font-size: 10px;
+    }
+    .indbetalFormText{
+        font-size: 10px;
+    }
+}

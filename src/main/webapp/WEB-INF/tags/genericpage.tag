@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/orders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/adminOrders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ordrehistorik.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/indbetal.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>

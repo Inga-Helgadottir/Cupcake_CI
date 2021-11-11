@@ -16,22 +16,22 @@
                 <div class="input-group-prepend">
                     <span class="loginEmail loginFormText input-group-text">Email</span>
                 </div>
-                <input type="text" class="loginInput form-control" placeholder="Enter a valid email"><!-- aria-describedby="basic-addon1">-->
+                <input type="text" class="loginInput form-control" placeholder="Enter a valid email">
             </div>
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
                     <span class="loginFormText input-group-text">Password</span>
                 </div>
-                <input type="password" class="loginInput form-control" placeholder="Enter your password"><!-- aria-describedby="basic-addon1">-->
+                <input type="password" class="loginInput form-control" placeholder="Enter your password">
             </div>
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
                     <span class="loginFormText input-group-text">Password</span>
                 </div>
-                <input type="password" class="loginInput form-control" placeholder="Repeat the password"><!-- aria-describedby="basic-addon1">-->
+                <input type="password" class="loginInput form-control" placeholder="Repeat the password">
             </div>
             <div class="btnOptions d-flex justify-content-start">
-                <button type="submit" id="btnSignup" class="btn btn-primary btn-lg mb-5" href="">Signup</button>
+                <button type="submit" id="btnSignup" class="btn btn-primary btn-lg mb-5">Signup</button>
             </div>
         </form>
 

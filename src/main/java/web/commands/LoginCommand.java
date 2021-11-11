@@ -38,7 +38,7 @@ public class LoginCommand extends CommandUnprotectedPage
         }
         catch (UserException ex)
         {
-            request.setAttribute("error", "Wrong username or password!");
+            request.setAttribute("error", ex.getMessage());
             return "loginpage";
         }
     }

@@ -16,13 +16,13 @@
                 <div class="input-group-prepend">
                     <span class="loginEmail loginFormText input-group-text">Email:</span>
                 </div>
-                <input type="text" class="loginInput form-control" placeholder="fake@email.com">
+                <input name="email" type="text" class="loginInput form-control" placeholder="fake@email.com">
             </div>
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
                     <span class="loginFormText input-group-text">Password:</span>
                 </div>
-                <input type="password" class="loginInput form-control" placeholder="**********">
+                <input name="password" type="password" class="loginInput form-control" placeholder="**********">
             </div>
             <div class="btnOptions d-flex justify-content-start">
                 <button type="submit" id="btnOptionsLogin" class="btn btn-primary btn-lg mb-5">Login</button>

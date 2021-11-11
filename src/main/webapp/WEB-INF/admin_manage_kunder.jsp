@@ -5,7 +5,7 @@
 <t:genericpage>
 
     <jsp:attribute name="header">
-         Home
+         Admin manage kunder
     </jsp:attribute>
 
     <jsp:attribute name="footer">

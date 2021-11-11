@@ -5,7 +5,7 @@
 <t:genericpage>
 
     <jsp:attribute name="header">
-         Home
+         Tak for din bestilling
     </jsp:attribute>
 
     <jsp:attribute name="footer">

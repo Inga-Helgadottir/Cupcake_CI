@@ -4,15 +4,15 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Login page
+         Bestil cupcakes
     </jsp:attribute>
 
     <jsp:attribute name="footer">
+        <c:set var="addHomeLink" value="${false}" scope="request"/>
     </jsp:attribute>
 
     <jsp:body>
 <%--        <form action="${pageContext.request.contextPath}/fc/logincommand" method="post" class="mb-3 d-flex flex-column bodyBg">--%>
-<%--    change to get from DB -------------------------------------------------------------------------------------------------------%>
         <section class="bodyBg">
             <h2 class="bestilH2 mb-4">Bestil her:</h2>
             <p class="bestilP mb-5">Vælg din bund, topping og mængde her:</p>
@@ -21,23 +21,23 @@
             <form method="post" class="mb-3 d-flex flex-lg-row flex-sm-column justify-content-between">
                 <select class="bestilSelect valgBund" id="bund">
                     <option selected>Vælg bund</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <c:forEach var="botItem" items="${applicationScope.botList}">
+                        <option value="${botItem.bot_id}">${botItem.name}: ${botItem.price}kr</option>
+                    </c:forEach>
                 </select>
 
                 <select class="bestilSelect valgTopping" id="topping">
                     <option selected>Vælg topping</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <c:forEach var="topItem" items="${applicationScope.topList}">
+                        <option value="${topItem.top_id}">${topItem.name}: ${topItem.price}kr</option>
+                    </c:forEach>
                 </select>
 
                 <select class="bestilSelect valgAntal" id="antal">
                     <option selected>Vælg antal</option>
-                    <option value="1">One</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    <c:forEach var="var" begin="1" end="10" step="1">
+                        <option value="${var}">${var}</option>
+                    </c:forEach>
                 </select>
                 <button type="submit" class="kurvBtn btn btn-primary btn-lg mb-5">Læg i kurv</button>
             </form>

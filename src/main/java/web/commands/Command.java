@@ -29,7 +29,8 @@ public abstract class Command
         commands.put("kurv", new CommandUnprotectedPage("lagt_i_kurv"));
         commands.put("indbetal", new CommandUnprotectedPage("indbetal_penge"));
         commands.put("orders", new CommandUnprotectedPage("orders"));
-        commands.put("bestil", new CommandUnprotectedPage("bestil_cupcakespage.jsp"));
+        commands.put("bestil", new CommandUnprotectedPage("bestil_cupcakespage"));
+
         commands.put("logincommand", new LoginCommand(""));
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));

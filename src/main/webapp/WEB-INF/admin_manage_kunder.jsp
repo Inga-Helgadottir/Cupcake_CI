@@ -39,8 +39,8 @@
 
             </div>
             <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
-                <a href="" class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet kunde</a>
-                <a href="" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
+                <a class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet kunde</a>
+                <a href="${pageContext.request.contextPath}/fc/admin" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
             </div>
         </section>
 

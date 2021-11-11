@@ -17,21 +17,9 @@
         <div class="bodyBgTak d-flex flex-column justify-content-around">
             <h2 class="display-4 takH2 d-flex justify-content-center">Tak for din bestilling!</h2>
 
-            <div class="btnOptions d-flex justify-content-center"><!--------------------------------add href here------------------------------------------>
+            <div class="btnOptions d-flex justify-content-center">
                 <a href="${pageContext.request.contextPath}/fc/index" id="btnTak" class="btn btn-sm btn-primary btn-lg mb-5">Tilbage til forsiden</a>
             </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-            <p style="font-size: larger">This is what you can do,
-                since your are logged in as an employee</p>
-            <p><a href="fc/employeepage">Employee Page</a>
-                </c:if>
-
-                <c:if test="${sessionScope.role == 'customer' }">
-            <p style="font-size: larger">This is what you can do, since your
-                are logged in as a customer</p>
-            <p><a href="fc/customerpage">Customer Page</a>
-                </c:if>
         </div>
 
     </jsp:body>

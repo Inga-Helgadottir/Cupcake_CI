@@ -23,12 +23,21 @@ public abstract class Command
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("orderpage", new CommandUnprotectedPage("bestil_cupcakespage"));
+        commands.put("takpage", new CommandUnprotectedPage("tak_for_din_bestilling"));
+        commands.put("ordrehistorik", new CommandUnprotectedPage("ordrehistorik"));
+        commands.put("profile", new CommandUnprotectedPage("profile"));
+        commands.put("kurv", new CommandUnprotectedPage("lagt_i_kurv"));
+        commands.put("indbetal", new CommandUnprotectedPage("indbetal_penge"));
+        commands.put("orders", new CommandUnprotectedPage("orders"));
+        commands.put("bestil", new CommandUnprotectedPage("bestil_cupcakespage.jsp"));
         commands.put("logincommand", new LoginCommand(""));
         commands.put("logoutcommand", new LogoutCommand(""));
         commands.put("registerpage", new CommandUnprotectedPage("registerpage"));
         commands.put("registercommand", new RegisterCommand(""));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
-        commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
+        commands.put("admin", new CommandProtectedPage("admin", "employee"));
+        commands.put("adminKunder", new CommandProtectedPage("admin_manage_kunder", "employee"));
+        commands.put("adminOrders", new CommandProtectedPage("admin_manage_orders", "employee"));
     }
 
     public static Command fromPath(

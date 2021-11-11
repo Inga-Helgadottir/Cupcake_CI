@@ -17,22 +17,10 @@
         <div class="bodyBg">
             <h2 class="display-4 kurvH2">Bestilling lagt i kurv</h2>
 
-            <div class="btnOptions"><!--------------------------------add href here------------------------------------------>
-                <a href="${pageContext.request.contextPath}/fc/index" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Shop videre</a>
-                <a href="" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Se order</a>
+            <div class="btnOptions">
+                <a href="${pageContext.request.contextPath}/fc/bestil" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Shop videre</a>
+                <a href="${pageContext.request.contextPath}/fc/orders" class="btnKurv btn btn-sm btn-primary btn-lg mb-5">Se order</a>
             </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-            <p style="font-size: larger">This is what you can do,
-                since your are logged in as an employee</p>
-            <p><a href="fc/employeepage">Employee Page</a>
-                </c:if>
-
-                <c:if test="${sessionScope.role == 'customer' }">
-            <p style="font-size: larger">This is what you can do, since your
-                are logged in as a customer</p>
-            <p><a href="fc/customerpage">Customer Page</a>
-                </c:if>
         </div>
 
     </jsp:body>

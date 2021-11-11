@@ -16,27 +16,13 @@
          <div class="bodyBg">
             <h2 class="display-4">Velkommen ombord</h2>
 
-            <p class="lead velkommenP">
-                Øens bedste cupcakes. Vælg og bestil her:
-            </p>
+            <p class="lead velkommenP">Øens bedste cupcakes. Vælg og bestil her:</p>
 
             <div class="btnOptions">
                  <!--her mangler der en href----------------------------------------------------->
                 <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
-                <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
+                <a href="${pageContext.request.contextPath}/fc/orderpage" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
             </div>
-
-            <c:if test="${sessionScope.role == 'employee' }">
-                <p style="font-size: larger">This is what you can do,
-                    since your are logged in as an employee</p>
-                 <p><a href="fc/employeepage">Employee Page</a>
-             </c:if>
-
-             <c:if test="${sessionScope.role == 'customer' }">
-                <p style="font-size: larger">This is what you can do, since your
-                    are logged in as a customer</p>
-                <p><a href="fc/customerpage">Customer Page</a>
-            </c:if>
         </div>-
 
     </jsp:body>

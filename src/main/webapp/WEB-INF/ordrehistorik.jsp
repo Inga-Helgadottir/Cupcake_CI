@@ -33,8 +33,7 @@
                 </p>
             </div>
             <div class="orderHistoryBtnContainer">
-                    <%--                add href here------------------------------------------------------------------------%>
-                <a href="" class="orderHistoryBtn btn btn-primary btn-lg">Tilbage til portfolie</a>
+                <a href="${pageContext.request.contextPath}/fc/profile" class="orderHistoryBtn btn btn-primary btn-lg">Tilbage til portfolie</a>
             </div>
         </section>
 

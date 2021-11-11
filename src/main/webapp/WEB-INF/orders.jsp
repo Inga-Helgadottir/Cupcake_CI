@@ -50,7 +50,7 @@
                     <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
                         <span class="pris">20kr</span>
                     </p>
-                    <a class="tjekBtn btn btn-danger">Tjek ud</a>
+                    <a href="${pageContext.request.contextPath}/fc/takpage" class="tjekBtn btn btn-danger">Tjek ud</a>
                 </div>
             </div>
         </section>

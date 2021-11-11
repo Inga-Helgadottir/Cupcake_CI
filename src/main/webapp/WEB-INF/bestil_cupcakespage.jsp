@@ -12,13 +12,11 @@
     </jsp:attribute>
 
     <jsp:body>
-<%--        <form action="${pageContext.request.contextPath}/fc/logincommand" method="post" class="mb-3 d-flex flex-column bodyBg">--%>
         <section class="bodyBg">
             <h2 class="bestilH2 mb-4">Bestil her:</h2>
             <p class="bestilP mb-5">Vælg din bund, topping og mængde her:</p>
 
-            <!-- add action here--------------------------------------------------------------------------------->
-            <form method="post" class="mb-3 d-flex flex-lg-row flex-sm-column justify-content-between">
+            <form action="${pageContext.request.contextPath}/fc/addtocart" method="post" class="mb-3 d-flex flex-lg-row flex-sm-column justify-content-between">
                 <select class="bestilSelect valgBund" id="bund" name="bot">
                     <option selected>Vælg bund</option>
                     <c:forEach var="botItem" items="${applicationScope.botList}">

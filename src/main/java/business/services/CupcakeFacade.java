@@ -2,10 +2,12 @@ package business.services;
 
 import business.entities.Bot;
 import business.entities.Top;
+import business.entities.User;
 import business.exceptions.UserException;
 import business.persistence.CupcakeMapper;
 import business.persistence.Database;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 public class CupcakeFacade {
@@ -16,6 +18,10 @@ public class CupcakeFacade {
         cupcakeMapper = new CupcakeMapper(database);
     }
 
+
+    public void createOrder(User user, int price, Timestamp ts) throws UserException{
+        cupcakeMapper.createOrder(user,price,ts);
+    }
 
     public Bot getBot(int botId) throws UserException {
         return cupcakeMapper.getBot(botId);

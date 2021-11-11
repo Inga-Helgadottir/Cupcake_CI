@@ -20,6 +20,7 @@ public abstract class Command
     private static void initCommands(Database database)
     {
         commands = new HashMap<>();
+//--------- skabelon commands ---------
         commands.put("index", new CommandUnprotectedPage("index"));
         commands.put("loginpage", new CommandUnprotectedPage("loginpage"));
         commands.put("logincommand", new LoginCommand(""));
@@ -28,13 +29,12 @@ public abstract class Command
         commands.put("registercommand", new RegisterCommand(""));
         commands.put("customerpage", new CommandProtectedPage("customerpage", "customer"));
         commands.put("employeepage", new CommandProtectedPage("employeepage", "employee"));
-
-
+//--------- links -------------------
         commands.put("orderpage", new CommandUnprotectedPage("orderpage"));
         commands.put("cartpage", new CommandUnprotectedPage("shoppingcartpage"));
         commands.put("aboutpage", new CommandUnprotectedPage("about"));
         commands.put("profilepage", new CommandUnprotectedPage("customerpage"));
-
+//--------- commands -------------------
         commands.put("addtocart", new AddToCartCommand("cartconfim","customer"));
     }
 

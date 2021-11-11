@@ -15,15 +15,25 @@
     <jsp:body>
 
         <div class="bodyBg">
-            <h2 class="display-4 kurvH2">Bestilling lagt i kurv</h2>
+            <h2 class="display-4 kurvH2">Tak for din bestilling</h2>
 
             <div class="btnOptions">
                 <a href="${pageContext.request.contextPath}/fc/orderpage" type="button"
-                   class="btn btn-sm btn-primary btn-lg mb-5">Shop videre</a>
-
-                <a href="${pageContext.request.contextPath}/fc/cartpage" type="button"
-                   class="btn btn-sm btn-primary btn-lg mb-5">Gå til tjek ud/kurv</a>
+                   class="btn btn-sm btn-primary btn-lg mb-5">Gå til forsiden</a>
             </div>
+
+
+            <div class=""> <%--styling --%>
+                <h4>
+                    Her kan du se noget information om din netop afsluttede ordre:
+                </h4>
+
+                <p>Ordre nummer: </p> ${sessionScope}
+                <p>Tracking: </p> ${sessionScope}
+                <p>Leverings tid: </p> ${sessionScope}
+                <p>Thank U Text</p>
+            </div>
+
         </div>
 
     </jsp:body>

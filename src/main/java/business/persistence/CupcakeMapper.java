@@ -2,12 +2,10 @@ package business.persistence;
 
 import business.entities.Bot;
 import business.entities.Top;
+import business.entities.User;
 import business.exceptions.UserException;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -112,4 +110,8 @@ public class CupcakeMapper {
         }
     }
 
+    public void createOrder(User user, int price, Timestamp ts) {
+
+
+    }
 }

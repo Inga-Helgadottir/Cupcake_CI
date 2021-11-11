@@ -19,21 +19,21 @@
 
             <!-- add action here--------------------------------------------------------------------------------->
             <form method="post" class="mb-3 d-flex flex-lg-row flex-sm-column justify-content-between">
-                <select class="bestilSelect valgBund" id="bund">
+                <select class="bestilSelect valgBund" id="bund" name="bot">
                     <option selected>Vælg bund</option>
                     <c:forEach var="botItem" items="${applicationScope.botList}">
                         <option value="${botItem.bot_id}">${botItem.name}: ${botItem.price}kr</option>
                     </c:forEach>
                 </select>
 
-                <select class="bestilSelect valgTopping" id="topping">
+                <select class="bestilSelect valgTopping" id="topping" name="top">
                     <option selected>Vælg topping</option>
                     <c:forEach var="topItem" items="${applicationScope.topList}">
                         <option value="${topItem.top_id}">${topItem.name}: ${topItem.price}kr</option>
                     </c:forEach>
                 </select>
 
-                <select class="bestilSelect valgAntal" id="antal">
+                <select class="bestilSelect valgAntal" id="antal" name="amount">
                     <option selected>Vælg antal</option>
                     <c:forEach var="var" begin="1" end="10" step="1">
                         <option value="${var}">${var}</option>

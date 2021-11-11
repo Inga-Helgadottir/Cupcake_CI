@@ -3,7 +3,6 @@ package business.persistence;
 import business.entities.Bot;
 import business.entities.Top;
 import business.exceptions.UserException;
-import business.persistence.Database;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;

@@ -11,24 +11,24 @@
     </jsp:attribute>
 
     <jsp:body>
-        <form action="${pageContext.request.contextPath}/fc/RegisterCommand" method="post" class="mb-3 d-flex flex-column bodyBg">
+        <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="post" class="mb-3 d-flex flex-column bodyBg">
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
-                    <span class="loginEmail loginFormText input-group-text">Email</span>
+                    <lable class="loginEmail loginFormText input-group-text" for="email">Email</lable>
                 </div>
-                <input type="text" class="loginInput form-control" placeholder="Enter a valid email">
+                <input type="text" class="loginInput form-control" name="email" value="${param.email}" placeholder="Enter a valid email">
             </div>
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
-                    <span class="loginFormText input-group-text">Password</span>
+                    <lable class="loginFormText input-group-text" for="password1">Password</lable>
                 </div>
-                <input type="password" class="loginInput form-control" placeholder="Enter your password">
+                <input type="password" class="loginInput form-control" name="password1" value="${param.password1}" placeholder="Enter your password">
             </div>
             <div class="d-flex justify-content-start mb-4">
                 <div class="input-group-prepend">
-                    <span class="loginFormText input-group-text">Password</span>
+                    <lable class="loginFormText input-group-text" for="password2">Password</lable>
                 </div>
-                <input type="password" class="loginInput form-control" placeholder="Repeat the password">
+                <input type="password" class="loginInput form-control" name="password2" value="${param.password2}" placeholder="Repeat the password">
             </div>
             <div class="btnOptions d-flex justify-content-start">
                 <button type="submit" id="btnSignup" class="btn btn-primary btn-lg mb-5">Signup</button>

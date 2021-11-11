@@ -16,21 +16,7 @@
 
 
         <section class="ordersGrid row">
-            <div class="bodyBgOrders2 col-lg-4">
-                <div class="d-flex flex-column justify-content-around">
-                    <h2 class="display-4 mb-3">Total</h2>
-                    <p class="cupcakeKind d-flex justify-content-between">Subtotal:
-                        <span class="pris">${sessionScope.total}kr</span>
-                    </p>
-                    <p class="cupcakeKind d-flex justify-content-between">Levering:
-                        <span class="pris">0kr</span>
-                    </p>
-                    <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
-                        <span class="pris">${sessionScope.total}kr</span>
-                    </p>
-                    <a class="tjekBtn btn btn-danger">Tjek ud</a>
-                </div>
-            </div>
+
             <c:forEach var="cupcake" items="${sessionScope.shoppingCart}" varStatus="status">
                 <div class="bodyBgOrders col-lg-7">
 
@@ -62,10 +48,23 @@
                 </div>
                 <%---------------here-----------------------------------------------------------------------%>
             </c:forEach>
-
-
         </section>
 
+        <div class="bodyBgOrders2 col-lg-4">
+            <div class="d-flex flex-column justify-content-around">
+                <h2 class="display-4 mb-3">Total</h2>
+                <p class="cupcakeKind d-flex justify-content-between">Subtotal:
+                    <span class="pris">${sessionScope.total}kr</span>
+                </p>
+                <p class="cupcakeKind d-flex justify-content-between">Levering:
+                    <span class="pris">0kr</span>
+                </p>
+                <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
+                    <span class="pris">${sessionScope.total}kr</span>
+                </p>
+                <a class="tjekBtn btn btn-danger">Tjek ud</a>
+            </div>
+        </div>
 
     </jsp:body>
 </t:genericpage>

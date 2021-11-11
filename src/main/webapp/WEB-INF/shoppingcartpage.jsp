@@ -35,13 +35,14 @@
                                 <p class="cupcakeKind">Bottom: ${cupcake.bot} ${cupcake.bot_price}kr</p>
                             </div>
 
-                            <select class="bestilSelect antal">
-                                <option selected>Antal:</option>
-                                <c:forEach var="var" begin="1" end="10" step="1">
-                                    <option value="${var}">${var} </option>
-                                </c:forEach>
-                            </select>
-                            <a class="fjernBtn btn btn-warning">Fjern</a>
+                            <div class=""><%--styling--%>
+                                <label for="amount" class="cupcakeKind">Antal:</label>
+                                <input type="number" class="bestilSelect antal" id="amount" name="amount" min="0" step="1"
+                                       value="${cupcake.amount}">
+                            </div>
+
+                            <a href="" class="fjernBtn btn btn-warning">Fjern</a>
+                            <a href="" class="fjernBtn btn btn-warning">Opdater</a>
 
                         </div>
                     </div>

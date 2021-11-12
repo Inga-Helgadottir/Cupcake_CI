@@ -20,27 +20,22 @@ public class UpdateShoppingCartCommand extends CommandUnprotectedPage {
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
         List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
-        if (shoppingCart != null) {
-
-            List<Integer> integerList = new ArrayList<>();
-            List<String> stringList = Arrays.asList(request.getParameterValues("amount"));
-            for (String s : stringList) {
-                integerList.add(Integer.parseInt(s));
-            }
-
-            for (int i = 0; i < shoppingCart.size(); ++i) {
-                shoppingCart.get(i).setAmount(integerList.get(i));
-            }
-//updates the price attribute in session state.
-            int tmp_price = 0;
-            for (Cupcake c : shoppingCart) {
-                int temp2 = (c.getPrice() * c.getAmount());
-                tmp_price += temp2;
-            }
-            request.getSession().setAttribute("total", tmp_price);
+        List<String> stringList = Arrays.asList(request.getParameterValues("amount"));//stringList["1","1","8"]
+        List<Integer> integerList = new ArrayList<>();
+        for (String s : stringList) {
+            integerList.add(Integer.parseInt(s)); //convert stringlist to integerList[1,1,8]
         }
+        for (int i = 0; i < shoppingCart.size(); ++i) {
+            shoppingCart.get(i).setAmount(integerList.get(i));// update cupcakes amount in shoppingCart
+        }
+        //calculate price
+        int price = 0;
+        for (Cupcake c : shoppingCart) {
+            int tmp = (c.getPrice() * c.getAmount());
+            price += tmp;
+        }
+        request.getSession().setAttribute("shoppingCart", shoppingCart);
+        request.getSession().setAttribute("total", price);
         return pageToShow;
     }
-
-
 }

@@ -34,16 +34,12 @@
                                 <p class="cupcakeKind">Topping: ${cupcake.top} ${cupcake.top_price}kr</p>
                                 <p class="cupcakeKind">Bottom: ${cupcake.bot} ${cupcake.bot_price}kr</p>
                             </div>
-
-                            <div class=""><%--styling--%>
+                            <form action="${pageContext.request.contextPath}/fc/updateshoppingcart" method="get">
                                 <label for="amount" class="">Antal:</label>
-                                <input type="number" class="" id="amount" name="amount" min="0" step="1"
-                                       value="${cupcake.amount}">
-                            </div>
-
-                            <a href="" class="fjernBtn btn btn-warning">Fjern</a>
-
-
+                                <input type="number" class="" id="amount" name="amount" min="0" step="1" value="${cupcake.amount}"><br>
+                                <button type="submit" class="fjernBtn btn btn-warning" name="remove" value="${status.index}">Fjern</button>
+                                <button type="submit" class="fjernBtn btn btn-warning" name="update" value="${status.index}">Opdater</button>
+                            </form>
                         </div>
                     </div>
                 </div>
@@ -63,12 +59,19 @@
                 <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
                     <span class="pris">${sessionScope.total}kr</span>
                 </p>
-                <a href="#" class="tjekBtn btn btn-danger">Tjek ud</a>
+                <a href="${pageContext.request.contextPath}/fc/createorder" class="tjekBtn btn btn-danger">Tjek ud</a>
 
-                <a href="#" class="fjernBtn btn btn-warning">Opdater siden</a>
 
             </div>
         </div>
+        <c:if test="${requestScope.error != null }">
+            <p style="color:red">
+                    ${requestScope.error}
+            </p>
+        </c:if>
 
+        <c:if test="${not empty param.msg}">
+            <p style="font-size: large">${param.msg}</p>
+        </c:if>
     </jsp:body>
 </t:genericpage>

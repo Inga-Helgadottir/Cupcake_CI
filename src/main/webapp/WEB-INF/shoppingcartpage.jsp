@@ -36,13 +36,13 @@
                             </div>
 
                             <div class=""><%--styling--%>
-                                <label for="amount" class="cupcakeKind">Antal:</label>
-                                <input type="number" class="bestilSelect antal" id="amount" name="amount" min="0" step="1"
+                                <label for="amount" class="">Antal:</label>
+                                <input type="number" class="" id="amount" name="amount" min="0" step="1"
                                        value="${cupcake.amount}">
                             </div>
 
                             <a href="" class="fjernBtn btn btn-warning">Fjern</a>
-                            <a href="" class="fjernBtn btn btn-warning">Opdater</a>
+
 
                         </div>
                     </div>
@@ -63,7 +63,10 @@
                 <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
                     <span class="pris">${sessionScope.total}kr</span>
                 </p>
-                <a class="tjekBtn btn btn-danger">Tjek ud</a>
+                <a href="#" class="tjekBtn btn btn-danger">Tjek ud</a>
+
+                <a href="#" class="fjernBtn btn btn-warning">Opdater siden</a>
+
             </div>
         </div>
 

@@ -47,7 +47,8 @@ public class AddToCartCommand extends CommandProtectedPage {
 
             int temp = 0;
             for (Cupcake c: shoppingCart) {
-                temp += c.getPrice();
+                int temp2 = (c.getPrice()*c.getAmount());
+                temp += temp2;
             }
             request.getSession().setAttribute("total", temp);
 

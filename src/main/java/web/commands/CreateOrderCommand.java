@@ -43,15 +43,25 @@ public class CreateOrderCommand extends CommandProtectedPage {
             long time = date.getTime();
             Timestamp ts = new Timestamp(time);
 
-            cupcakeFacade.createOrder(user,price,ts);
+
+            //this is just a extra thing that makes its easier for the user. If a user edits the amount on the page but forgets to
+            //press the update button, then the order will still track the changes regardless :) so the update button is more, for ascetics.
+            //It will still update the page amounts and the total price of the order.
+            List<Integer> integerList = new ArrayList<>();
+            List<String> stringList = Arrays.asList(request.getParameterValues("amount"));
+            for (String s : stringList) {
+                integerList.add(Integer.parseInt(s));
+            }
+            for (int i = 0; i < shoppingCart.size(); ++i) {
+                shoppingCart.get(i).setAmount(integerList.get(i));
+            }
+            //
+
+
+
             //cupcakeFacade.createCupcake(shoppingCart);
             //cupcakeFacade.createLink();       maybe this should be done automatically ^one above^
-            List<Integer> amountList = Arrays.asList(Integer.parseInt(Arrays.toString(request.getParameterValues("amount"))));
-
-            for (int i = 0; i < shoppingCart.size(); ++i) {
-                shoppingCart.get(i).setAmount(amountList.get(i));
-            }
-
+            cupcakeFacade.createOrder(user,price,ts);
             return pageToShow;
 
         } catch (NumberFormatException | UserException ex) {

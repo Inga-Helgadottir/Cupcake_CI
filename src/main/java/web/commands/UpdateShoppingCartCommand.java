@@ -18,16 +18,15 @@ public class UpdateShoppingCartCommand extends CommandUnprotectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-
         List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
-        List<String> stringList = Arrays.asList(request.getParameterValues("amount"));//stringList["1","1","8"]
-        List<Integer> integerList = new ArrayList<>();
-        for (String s : stringList) {
-            integerList.add(Integer.parseInt(s)); //convert stringlist to integerList[1,1,8]
-        }
-        for (int i = 0; i < shoppingCart.size(); ++i) {
-            shoppingCart.get(i).setAmount(integerList.get(i));// update cupcakes amount in shoppingCart
-        }
+        List<String> stringList2 = Arrays.asList(request.getParameterValues("amount"));//stringList["1","1","8"]
+        String indexvalue_string = request.getParameter("update");
+
+        int indexvalue = Integer.parseInt(indexvalue_string);
+        int amount = Integer.parseInt(stringList2.get(indexvalue));
+
+        shoppingCart.get(indexvalue).setAmount(amount);
+
         //calculate price
         int price = 0;
         for (Cupcake c : shoppingCart) {

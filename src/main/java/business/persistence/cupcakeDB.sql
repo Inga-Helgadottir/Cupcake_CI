@@ -101,6 +101,7 @@ INSERT INTO `bot` VALUES
 (3,'nutmeg',5),
 (4,'pistacio',6),
 (5,'almond',7);
+
 INSERT INTO `top` VALUES 
 (1,'chocolate',5),
 (2,'blueberry',5),
@@ -111,10 +112,12 @@ INSERT INTO `top` VALUES
 (7,'orange',8),
 (8,'lemon',8),
 (9,'blue cheese',9);
+
 INSERT INTO `user` VALUES 
-(1,'inga','inga@hotmail.com','inga123','admin',0),
+(1,'inga','inga@hotmail.com','inga123','customer',0),
 (2,'timmy','timmy@hotmail.com','timmy123','customer',0),
-(3,'jonas','jonas@hotmail.com','jonas123','admin',0);
+(3,'jonas','jonas@hotmail.com','jonas123','employee',0);
+
 INSERT INTO `cupcake_db`.`orders` (`order_id`, `user_id`, `price`) VALUES
 ('1', '2', '10'),
 ('2', '1', '12');

@@ -23,7 +23,6 @@
                 <a href="" class="btn btn-sm btn-primary btn-lg mb-5">Se udvalg</a>
                 <a href="${pageContext.request.contextPath}/fc/orderpage" class="btn btn-sm btn-primary btn-lg mb-5">Bestil cupcakes</a>
             </div>
-        </div>-
-
+        </div>
     </jsp:body>
 </t:genericpage>

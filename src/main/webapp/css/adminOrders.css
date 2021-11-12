@@ -2,10 +2,13 @@
     width:95%;
     height:20%;
     background-color: white;
-    padding:5%;
+    padding:3%!important;
 }
 .adminOrderBtns{
     width: 95%;
+}
+#orderCheck{
+    width:20%;
 }
 @media only screen and (max-width: 1224px){
     .btnAdminOrders {
@@ -25,5 +28,20 @@
     .btnAdminOrders {
         margin-bottom: 5% !important;
         width:100% !important;
+    }
+}
+@media only screen and (max-width: 960px) {
+    .myTable th, .myTable td{
+        font-size: 10px;
+    }
+}
+@media only screen and (max-width: 506px) {
+    .myTable th, .myTable td{
+        font-size: 7px;
+    }
+}
+@media only screen and (max-width: 379px) {
+    .myTable th, .myTable td{
+        font-size: 5px;
     }
 }

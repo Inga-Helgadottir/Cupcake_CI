@@ -1,10 +1,12 @@
 package web;
 
 import business.entities.Bot;
+import business.entities.Order;
 import business.entities.Top;
 import business.exceptions.UserException;
 import business.persistence.Database;
 import business.services.CupcakeFacade;
+import business.services.OrderFacede;
 import web.commands.*;
 
 import java.io.IOException;
@@ -27,6 +29,7 @@ public class FrontController extends HttpServlet
 
     public static Database database;
     CupcakeFacade cupcakeFacade;
+    OrderFacede orderFacede;
     public void init() throws ServletException
     {
         // Initialize database connection
@@ -44,11 +47,14 @@ public class FrontController extends HttpServlet
 
         // Initialize whatever global datastructures needed here:
         cupcakeFacade = new CupcakeFacade(database);
+        orderFacede = new OrderFacede(database);
         try {
             List<Top> topList = cupcakeFacade.getAllTops();
             getServletContext().setAttribute("topList", topList);
             List<Bot> botList = cupcakeFacade.getAllBottoms();
             getServletContext().setAttribute("botList", botList);
+            List<Order> orderList = orderFacede.getAllOrders();
+            getServletContext().setAttribute("orderList", orderList);
 
         } catch (UserException exception) {
             exception.printStackTrace();

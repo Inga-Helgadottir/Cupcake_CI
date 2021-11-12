@@ -65,7 +65,7 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 -- Table `cupcake_db`.`order`
 -- -----------------------------------------------------
-CREATE TABLE IF NOT EXISTS `cupcake_db`.`order` (
+CREATE TABLE IF NOT EXISTS `cupcake_db`.`orders` (
   `order_id` INT NOT NULL AUTO_INCREMENT,
   `user_id` INT NOT NULL,
   `price` INT NULL DEFAULT NULL,
@@ -115,3 +115,17 @@ INSERT INTO `user` VALUES
 (1,'inga','inga@hotmail.com','inga123','admin',0),
 (2,'timmy','timmy@hotmail.com','timmy123','customer',0),
 (3,'jonas','jonas@hotmail.com','jonas123','admin',0);
+INSERT INTO `cupcake_db`.`orders` (`order_id`, `user_id`, `price`) VALUES
+('1', '2', '10'),
+('2', '1', '12');
+
+INSERT INTO `cupcake_db`.`cupcake` (`cupcake_id`, `bot_id`, `top_id`, `price`, `amount`) VALUES
+('1', '1', '1', '10', '1'),
+('2', '3', '2', '20', '2');
+
+INSERT INTO `cupcake_db`.`orderline` (`order_id`, `cupcake_id`, `quantity`) VALUES
+('2', '2', '2'),
+('1', '1', '1');
+
+
+

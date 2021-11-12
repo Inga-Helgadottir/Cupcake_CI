@@ -13,25 +13,37 @@
     </jsp:attribute>
 
     <jsp:body>
-        <%--        change to get from DB------------------------------%>
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle ordre:</h2>
             <div class="seeAllOrders">
-                <h2 class="customerInfo d-flex justify-content-between mt-5">//her vises alle ordre
-                    <span> 5kr</span>
-                </h2>
-                <p class="customerInfo d-flex justify-content-between mt-5">jeg behøver at ændre det her
-                    <span> 5kr</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">fordi jeg er ikke sikker hvordan det her skal se ud da man henter fra databasen
-                    <span> 5kr</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">men jeg mangler meget indhold for at kigge på design på siden
-                    <span> 5kr</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">remember to fix adminOrders.css (padding on seeAllOrders)
-                    <span> 5kr</span>
-                </p>
+                <table class="table mt-5 myTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">Order id</th>
+                        <th scope="col">Price</th>
+                        <th scope="col">Quantity</th>
+                        <th scope="col">User</th>
+                        <th scope="col">Top</th>
+                        <th scope="col">Bottom</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="orderItem" items="${applicationScope.orderList}">
+                        <tr>
+                            <th scope="row">
+                                    <%--for at kunne slette den senere------------------------------------------------------%>
+                                <input type="checkbox" id="orderCheck" name="orderCheck" value="${orderItem.orderId}">
+                                    ${orderItem.orderId}
+                            </th>
+                            <td>${orderItem.price}kr</td>
+                            <td>${orderItem.quantity}</td>
+                            <td>${orderItem.userEmail}</td>
+                            <td>${orderItem.topName}</td>
+                            <td>${orderItem.botName}</td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
             </div>
             <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
                 <a class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet ordre</a>

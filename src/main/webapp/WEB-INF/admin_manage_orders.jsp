@@ -13,6 +13,7 @@
     </jsp:attribute>
 
     <jsp:body>
+
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle ordre:</h2>
             <div class="seeAllOrders">
@@ -32,7 +33,7 @@
                         <tr>
                             <th scope="row">
                                     <%--for at kunne slette den senere------------------------------------------------------%>
-                                <input type="checkbox" id="orderCheck" name="orderCheck" value="${orderItem.orderId}">
+                                <input type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
                                     ${orderItem.orderId}
                             </th>
                             <td>${orderItem.price}kr</td>
@@ -46,10 +47,18 @@
                 </table>
             </div>
             <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
-                <a class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet ordre</a>
+                <a href="${pageContext.request.contextPath}/fc/adminDeleteOrders" class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet ordre</a>
                 <a href="${pageContext.request.contextPath}/fc/admin" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
             </div>
         </section>
+        <script>
+            function onlyOne(checkbox) {
+                var checkboxes = document.getElementsByName("orderCheck");
+                checkboxes.forEach((item) => {
+                    if (item !== checkbox) item.checked = false
+                })
+            }
+        </script>
 
     </jsp:body>
 </t:genericpage>

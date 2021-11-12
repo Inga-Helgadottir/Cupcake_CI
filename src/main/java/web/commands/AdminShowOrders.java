@@ -6,6 +6,7 @@ import business.entities.Order;
 import business.entities.Top;
 import business.exceptions.UserException;
 import business.services.CupcakeFacade;
+import business.services.OrderFacede;
 import business.services.UserFacade;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,10 +17,13 @@ import java.util.List;
 public class AdminShowOrders extends CommandProtectedPage{
     CupcakeFacade cupcakeFacade;
     UserFacade userFacade;
+    OrderFacede orderFacede;
+
     public AdminShowOrders(String pageToShow, String role) {
         super(pageToShow, role);
         cupcakeFacade = new CupcakeFacade(database);
         userFacade = new UserFacade(database);
+        orderFacede = new OrderFacede(database);
     }
 
     @Override

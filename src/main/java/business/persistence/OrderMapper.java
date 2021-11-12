@@ -5,6 +5,7 @@ import business.entities.Cupcake;
 import business.entities.Order;
 import business.entities.Top;
 import business.exceptions.UserException;
+import jdk.nashorn.internal.ir.RuntimeNode;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -39,7 +40,24 @@ public class OrderMapper {
         } catch (SQLException ex) {
             throw new UserException(ex.getMessage());
         }
+    }
 
+    public void deleteOrder(int orderId) throws UserException {
+        try (Connection connection = database.connect()) {
+            String sql = "SET FOREIGN_KEY_CHECKS=0;\n" +
+                    "DELETE FROM orders WHERE order_id = ?;\n" +
+                    "SET FOREIGN_KEY_CHECKS=1;";
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                //name of checkbox = orderCheck - request.getParameterValues("orderCheck");
+                ps.setInt(1, orderId);
+                int res = ps.executeUpdate();
 
+                if (res > 0) {
+                    System.out.println("the order with the id: " + orderId + " has been deleted");
+                }
+            }
+            }catch (SQLException ex){
+            throw new UserException(ex.getMessage());
+        }
     }
 }

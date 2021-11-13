@@ -44,7 +44,7 @@ public class OrderMapper {
 
     public void deleteOrder(int orderId) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "SELECT o.order_id, u.email, t.name AS topName, b.name AS botName, ol.quantity, o.price, o.date FROM orders AS o INNER JOIN user AS u ON o.user_id = u.user_id INNER JOIN orderline AS ol ON o.order_id = ol.order_id INNER JOIN cupcake AS c ON ol.cupcake_id = c.cupcake_id INNER JOIN top AS t ON c.top_id = t.top_id INNER JOIN bot AS b ON c.bot_id = b.bot_id";
+            String sql = "";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setInt(1, orderId);
@@ -54,7 +54,7 @@ public class OrderMapper {
                     System.out.println("the order with the id: " + orderId + " has been deleted");
                 }
             }
-            }catch (SQLException ex){
+        }catch (SQLException ex){
             throw new UserException(ex.getMessage());
         }
     }

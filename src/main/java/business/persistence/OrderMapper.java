@@ -44,9 +44,7 @@ public class OrderMapper {
 
     public void deleteOrder(int orderId) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "SET FOREIGN_KEY_CHECKS=0;\n" +
-                    "DELETE FROM orders WHERE order_id = ?;\n" +
-                    "SET FOREIGN_KEY_CHECKS=1;";
+            String sql = "";
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 //name of checkbox = orderCheck - request.getParameterValues("orderCheck");
                 ps.setInt(1, orderId);

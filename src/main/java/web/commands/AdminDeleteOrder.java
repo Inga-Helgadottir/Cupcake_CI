@@ -1,9 +1,11 @@
 package web.commands;
 
+import business.exceptions.UserException;
 import business.services.CupcakeFacade;
 import business.services.OrderFacede;
 import business.services.UserFacade;
 
+import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -19,12 +21,21 @@ public class AdminDeleteOrder extends CommandProtectedPage{
     }
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
-
         try {
-            //this is null
-            String s = request.getParameter("orderCheck");
-            System.out.println(s.toString());
-            //deleteAOrder(s);
+            Cookie[] cookies = request.getCookies();
+            if(cookies != null){
+                for (Cookie cookie : cookies) {
+                    if (cookie.getName().equals("checkedbox")) {
+                        System.out.println(cookie.getValue());
+                        try {
+                            int cookieNbr = Integer.parseInt(cookie.getValue());
+                            orderFacede.deleteAOrder(cookieNbr);
+                        } catch (UserException e) {
+                            e.printStackTrace();
+                        }
+                    }
+                }
+            }
             return pageToShow;
         } catch (NumberFormatException ex) {
             request.setAttribute("error", ex.getMessage());

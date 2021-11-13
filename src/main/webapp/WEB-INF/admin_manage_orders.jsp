@@ -33,7 +33,7 @@
                         <tr>
                             <th scope="row">
                                     <%--for at kunne slette den senere------------------------------------------------------%>
-                                <input type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
+                                <input class="checkbox" type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
                                     ${orderItem.orderId}
                             </th>
                             <td>${orderItem.price}kr</td>
@@ -53,10 +53,12 @@
         </section>
         <script>
             function onlyOne(checkbox) {
-                var checkboxes = document.getElementsByName("orderCheck");
+                let checkboxes = document.getElementsByName("orderCheck");
                 checkboxes.forEach((item) => {
                     if (item !== checkbox) item.checked = false
                 })
+                let checkedCookie = document.querySelector(".checkbox:checked").value;
+                document.cookie = "checkedbox=" + checkedCookie;
             }
         </script>
 

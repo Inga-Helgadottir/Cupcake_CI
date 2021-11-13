@@ -32,7 +32,6 @@
                     <c:forEach var="orderItem" items="${applicationScope.orderList}">
                         <tr>
                             <th scope="row">
-                                    <%--for at kunne slette den senere------------------------------------------------------%>
                                 <input class="checkbox" type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
                                     ${orderItem.orderId}
                             </th>
@@ -52,12 +51,18 @@
             </div>
         </section>
         <script>
+            //<input class="checkbox" type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
             function onlyOne(checkbox) {
+                //selects all the checkboxes
                 let checkboxes = document.getElementsByName("orderCheck");
+                //loops through them
                 checkboxes.forEach((item) => {
-                    if (item !== checkbox) item.checked = false
+                    //if this box is checked it unchecks all the others
+                    if (item !== checkbox) item.checked = false;
                 })
+                //gets the checkbox value, witch is the orderId
                 let checkedCookie = document.querySelector(".checkbox:checked").value;
+                // saves the value of the checkbox in a cookie
                 document.cookie = "checkedbox=" + checkedCookie;
             }
         </script>

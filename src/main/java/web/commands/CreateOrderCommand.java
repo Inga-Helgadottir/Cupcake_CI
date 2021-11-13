@@ -38,15 +38,22 @@ public class CreateOrderCommand extends CommandProtectedPage {
 
             User user = (User) request.getSession().getAttribute("user");
             int price = (int) request.getSession().getAttribute("total");
-            Date date = new Date();
-            long time = date.getTime();
-            Timestamp ts = new Timestamp(time);
-            cupcakeFacade.createOrder(user,price,ts);
+            if (user.getBalance() > price) {
+                Date date = new Date();
+                long time = date.getTime();
+                Timestamp ts = new Timestamp(time);
+                cupcakeFacade.createOrder(user, price, ts);
+                shoppingCart.clear();
+                request.setAttribute("shoppingCart",shoppingCart);
+                request.setAttribute("total", 0);
 
-            //cupcakeFacade.createCupcake(shoppingCart);
-            //cupcakeFacade.createLink();  //maybe this should be done automatically ^one above^
+                //cupcakeFacade.createCupcake(shoppingCart);
+                //cupcakeFacade.createLink();  //maybe this should be done automatically ^one above^
 
-            return pageToShow;
+                return pageToShow;
+            }
+            request.setAttribute("error", "du har ikke nok penge på din konto ");
+            return "shoppingcartpage";
 
         } catch (NumberFormatException | UserException ex) {
             request.setAttribute("error", ex.getMessage());

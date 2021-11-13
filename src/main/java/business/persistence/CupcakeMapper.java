@@ -138,4 +138,31 @@ public class CupcakeMapper {
             throw new UserException(ex.getMessage());
         }
     }
+
+    public List<Order> getAllOrders() {
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM `order`";
+
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ResultSet rs = ps.executeQuery();
+                List<Order> orderList = new ArrayList<>();
+                while (rs.next()) {
+                    int order_id = rs.getInt("order_id");
+                    int user_id = rs.getInt("user_id");
+                    int price = rs.getInt("price");
+                    Timestamp timestamp = rs.getTimestamp("created");
+                    Order order = new Order(order_id,user_id,price,timestamp);
+                    orderList.add(order);
+                }
+                return orderList;
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        } catch (SQLException ex) {
+            ex.printStackTrace();
+        }
+        return null;
+    }
 }

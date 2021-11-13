@@ -32,9 +32,10 @@ public abstract class Command {
         commands.put("cartpage", new CommandUnprotectedPage("shoppingcartpage"));
         commands.put("aboutpage", new CommandUnprotectedPage("about"));
         commands.put("profilepage", new CommandUnprotectedPage("customerpage"));
+        commands.put("adminOrders", new ShowOrders_admin("viewOrders_admin", "employee"));
 //--------- commands -------------------
         commands.put("addtocart", new AddToCartCommand("cartconfim", "customer"));
-        commands.put("createorder", new CreateOrderCommand("index", "customer"));
+        commands.put("createorder", new CreateOrderCommand("orderconfimpage", "customer"));
         commands.put("updateshoppingcart", new UpdateShoppingCartCommand("shoppingcartpage"));
     }
 

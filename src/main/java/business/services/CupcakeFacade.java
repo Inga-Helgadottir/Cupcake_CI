@@ -1,6 +1,7 @@
 package business.services;
 
 import business.entities.Bot;
+import business.entities.Order;
 import business.entities.Top;
 import business.entities.User;
 import business.exceptions.UserException;
@@ -37,5 +38,9 @@ public class CupcakeFacade {
 
     public List<Top> getAllTops() throws UserException {
         return cupcakeMapper.getAllTops();
+    }
+
+    public List<Order> getAllOrders() {
+        return cupcakeMapper.getAllOrders();
     }
 }

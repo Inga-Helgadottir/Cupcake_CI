@@ -2,8 +2,52 @@
     margin-bottom: 2.5em;
     font-size: 25px;
 }
-.btnOptions a{
+.btnOptions button, .btnOptions a{
     padding: 9px 38px;
     margin-right: 72px;
     font-size: 20px;
+}
+/*det her skulle have være i login css
+men for et eller anden grund virker de her linjer ikke derinde
+men de andre linjer derinde virker */
+#btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
+    width: 26.5%!important;
+}
+
+@media only screen and (max-width: 970px) {
+    #btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
+        width: 29.5%!important;
+    }
+    .loginInput{
+        width:55%!important;
+    }
+}
+@media only screen and (max-width: 882px) {
+    #btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
+        width: 31%!important;
+    }
+    .loginInput{
+        width:58%!important;
+    }
+}
+@media only screen and (max-width: 844px) {
+    #btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
+        width: 36%!important;
+    }
+    .loginInput{
+        width:67%!important;
+    }
+}
+@media only screen and (max-width: 741px) {
+    #btnOptionsLogin, #btnOptionsLogin2, #btnSignup, .btnKurv{
+        width: 39%!important;
+    }
+    .loginInput{
+        width:72%!important;
+    }
+}
+@media only screen and (max-width: 705px) {
+    .bodyBg {
+        padding: 26px 0px 80px 30px!important;
+    }
 }

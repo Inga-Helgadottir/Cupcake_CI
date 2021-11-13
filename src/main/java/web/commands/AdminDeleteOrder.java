@@ -22,11 +22,13 @@ public class AdminDeleteOrder extends CommandProtectedPage{
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
+            //gets all cookies
             Cookie[] cookies = request.getCookies();
             if(cookies != null){
                 for (Cookie cookie : cookies) {
+                    //cookie name = checkedbox, value = orderId
                     if (cookie.getName().equals("checkedbox")) {
-                        System.out.println(cookie.getValue());
+                        System.out.println(cookie.getValue());//----------------------------------delete later
                         try {
                             int cookieNbr = Integer.parseInt(cookie.getValue());
                             orderFacede.deleteAOrder(cookieNbr);

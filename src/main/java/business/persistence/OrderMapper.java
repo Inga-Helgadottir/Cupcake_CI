@@ -44,9 +44,9 @@ public class OrderMapper {
 
     public void deleteOrder(int orderId) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "";
+            String sql = "SELECT o.order_id, u.email, t.name AS topName, b.name AS botName, ol.quantity, o.price, o.date FROM orders AS o INNER JOIN user AS u ON o.user_id = u.user_id INNER JOIN orderline AS ol ON o.order_id = ol.order_id INNER JOIN cupcake AS c ON ol.cupcake_id = c.cupcake_id INNER JOIN top AS t ON c.top_id = t.top_id INNER JOIN bot AS b ON c.bot_id = b.bot_id";
+
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
-                //name of checkbox = orderCheck - request.getParameterValues("orderCheck");
                 ps.setInt(1, orderId);
                 int res = ps.executeUpdate();
 

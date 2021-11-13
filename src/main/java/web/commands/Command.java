@@ -37,6 +37,7 @@ public abstract class Command {
         commands.put("addtocart", new AddToCartCommand("cartconfim", "customer"));
         commands.put("createorder", new CreateOrderCommand("orderconfimpage", "customer"));
         commands.put("updateshoppingcart", new UpdateShoppingCartCommand("shoppingcartpage"));
+        commands.put("deleteorder_admin", new DeleteOrderCommand("viewOrders_admin","employee"));
     }
 
     public static Command fromPath(

@@ -43,4 +43,7 @@ public class CupcakeFacade {
     public List<Order> getAllOrders() {
         return cupcakeMapper.getAllOrders();
     }
+    public void removeOrder(int order_id){
+        cupcakeMapper.removeOrder(order_id);
+    }
 }

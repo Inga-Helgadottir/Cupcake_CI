@@ -17,39 +17,44 @@
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle ordre:</h2>
             <div class="seeAllOrders">
-                <table class="table mt-5 myTable">
-                    <thead>
-                    <tr>
-                        <th scope="col">Order id</th>
-                        <th scope="col">Price</th>
-                        <th scope="col">User</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="order" items="${sessionScope.orderList}">
+                <form action="${pageContext.request.contextPath}/fc/deleteorder_admin" method="get"
+                      name="deleteform" id="deleteform">
+                    <table class="table mt-5 myTable">
+                        <thead>
                         <tr>
-                            <th scope="row">
-                                <input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}"
-                                       onclick="onlyOne(this)">
-                                    ${order.order_id}
-                            </th>
-                            <td>${order.price}kr</td>
-                            <td>${sessionScope.user.email}</td>
-                            <td>${order.ts}</td>
+                            <th scope="col">Order id</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">User</th>
                         </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-            </div>
-            <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
-                <a href="${pageContext.request.contextPath}/fc/adminDeleteOrders"
-                   class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet ordre</a>
-                <a href="${pageContext.request.contextPath}/fc/admin"
-                   class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
+                        </thead>
+                        <tbody>
+                        <c:forEach var="order" items="${sessionScope.orderList}">
+
+                            <tr>
+                                <th scope="row">
+                                    <input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}"
+                                           onclick="onlyOne(this)">
+                                        ${order.order_id}
+                                </th>
+                                <td>${order.price}kr</td>
+                                <td>${sessionScope.user.email}</td>
+                                <td>${order.ts}</td>
+                            </tr>
+                        </c:forEach>
+                        </tbody>
+                    </table>
+                    <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
+                        <button type="submit" name="delete"
+                                class="btnProfile btnAdminOrders btn btn-primary btn-lg">Slet ordre
+                        </button>
+                        <a href="${pageContext.request.contextPath}/fc/admin"
+                           class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
+                    </div>
+                </form>
             </div>
         </section>
         <script>
-            //<input class="checkbox" type="checkbox" name="orderCheck" value="${orderItem.orderId}" onclick="onlyOne(this)">
+            //<input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}" onclick="onlyOne(this)">
             function onlyOne(checkbox) {
                 //selects all the checkboxes
                 let checkboxes = document.getElementsByName("orderCheck");

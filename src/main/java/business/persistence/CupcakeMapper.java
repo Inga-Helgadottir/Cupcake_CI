@@ -165,4 +165,20 @@ public class CupcakeMapper {
         }
         return null;
     }
+
+
+
+    public void removeOrder(int order_id) {
+
+        try (Connection connection = database.connect()) {
+            String sql = "DELETE FROM `order` WHERE order_id=?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, order_id);
+                ps.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }

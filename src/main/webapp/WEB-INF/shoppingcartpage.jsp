@@ -15,7 +15,7 @@
     <jsp:body>
 
         <c:forEach var="cupcake" items="${sessionScope.shoppingCart}" varStatus="status">
-        <section class="ordersGrid row">
+            <section class="ordersGrid row">
 
 
                 <div class="bodyBgOrders col-lg-7">
@@ -36,17 +36,22 @@
                             </div>
                             <form action="${pageContext.request.contextPath}/fc/updateshoppingcart" method="get">
                                 <label for="amount" class="">Antal:</label>
-                                <input type="number" class="" id="amount" name="amount" min="0" step="1" value="${cupcake.amount}"><br><br><br>
-                                <button type="submit" class="fjernBtn btn btn-warning" name="remove" value="${status.index}">Fjern</button>
-                                <button type="submit" class="fjernBtn btn btn-warning" name="update" value="${status.index}">Opdater</button>
+                                <input type="number" class="" id="amount" name="amount" min="0" step="1"
+                                       value="${cupcake.amount}"><br><br><br>
+                                <button type="submit" class="fjernBtn btn btn-warning" name="remove"
+                                        value="${status.index}">Fjern
+                                </button>
+                                <button type="submit" class="fjernBtn btn btn-warning" name="update"
+                                        value="${status.index}">Opdater
+                                </button>
                             </form>
                         </div>
                     </div>
                 </div>
-                <%---------------here-----------------------------------------------------------------------%>
+                    <%---------------here-----------------------------------------------------------------------%>
 
-        </section>
-    </c:forEach>
+            </section>
+        </c:forEach>
         <div class="bodyBgOrders2 col-lg-4">
             <div class="d-flex flex-column justify-content-around">
                 <h2 class="display-4 mb-3">Total</h2>

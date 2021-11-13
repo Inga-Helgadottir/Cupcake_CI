@@ -30,7 +30,6 @@ public class CreateOrderCommand extends CommandProtectedPage {
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
-
             List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
             if (shoppingCart == null){
                 request.setAttribute("error","Din indkøbskurv er tom");
@@ -42,31 +41,16 @@ public class CreateOrderCommand extends CommandProtectedPage {
             Date date = new Date();
             long time = date.getTime();
             Timestamp ts = new Timestamp(time);
-
-
-            //this is just a extra thing that makes its easier for the user. If a user edits the amount on the page but forgets to
-            //press the update button, then the order will still track the changes regardless :) so the update button is more, for ascetics.
-            //It will still update the page amounts and the total price of the order.
-            List<Integer> integerList = new ArrayList<>();
-            List<String> stringList = Arrays.asList(request.getParameterValues("amount"));
-            for (String s : stringList) {
-                integerList.add(Integer.parseInt(s));
-            }
-            for (int i = 0; i < shoppingCart.size(); ++i) {
-                shoppingCart.get(i).setAmount(integerList.get(i));
-            }
-            //
-
-
+            cupcakeFacade.createOrder(user,price,ts);
 
             //cupcakeFacade.createCupcake(shoppingCart);
-            //cupcakeFacade.createLink();       maybe this should be done automatically ^one above^
-            cupcakeFacade.createOrder(user,price,ts);
+            //cupcakeFacade.createLink();  //maybe this should be done automatically ^one above^
+
             return pageToShow;
 
         } catch (NumberFormatException | UserException ex) {
             request.setAttribute("error", ex.getMessage());
-            return "orderpage";
+            return "shoppingcartpage";
         }
     }
 }

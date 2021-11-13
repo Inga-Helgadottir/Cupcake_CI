@@ -1,6 +1,7 @@
 package business.persistence;
 
 import business.entities.Bot;
+import business.entities.Order;
 import business.entities.Top;
 import business.entities.User;
 import business.exceptions.UserException;
@@ -110,8 +111,31 @@ public class CupcakeMapper {
         }
     }
 
-    public void createOrder(User user, int price, Timestamp ts) {
+    public Order createOrder(User user, int price, Timestamp ts) throws UserException {
+        try (Connection connection = database.connect())
+        {
+            String sql = "INSERT INTO `order` (user_id, price, created) VALUES (?,?,?)";
 
-
+            try (PreparedStatement ps = connection.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS))
+            {
+                ps.setInt(1, user.getId());
+                ps.setInt(2, price);
+                ps.setTimestamp(3, ts);
+                ps.executeUpdate();
+                ResultSet ids = ps.getGeneratedKeys();
+                ids.next();
+                int id = ids.getInt(1);
+                Order order = new Order(id,user.getId(),price,ts);
+                return order;
+            }
+            catch (SQLException ex)
+            {
+                throw new UserException(ex.getMessage());
+            }
+        }
+        catch (SQLException | UserException ex)
+        {
+            throw new UserException(ex.getMessage());
+        }
     }
 }

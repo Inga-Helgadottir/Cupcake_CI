@@ -18,23 +18,36 @@ public class UpdateShoppingCartCommand extends CommandUnprotectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-        List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
-        List<String> stringList2 = Arrays.asList(request.getParameterValues("amount"));//stringList["1","1","8"]
-        String indexvalue_string = request.getParameter("update");
 
-        int indexvalue = Integer.parseInt(indexvalue_string);
-        int amount = Integer.parseInt(stringList2.get(indexvalue));
+            List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
 
-        shoppingCart.get(indexvalue).setAmount(amount);
+            if (request.getParameter("update") != null){
+                int index_shoppingcart = Integer.parseInt(request.getParameter("update"));
+                String amount_string = request.getParameter("amount");
+                int amount_int = Integer.parseInt(amount_string);
+                shoppingCart.get(index_shoppingcart).setAmount(amount_int);
+            }
 
-        //calculate price
-        int price = 0;
-        for (Cupcake c : shoppingCart) {
-            int tmp = (c.getPrice() * c.getAmount());
-            price += tmp;
+
+            //remove item from shoppingCart
+        if (request.getParameter("remove") != null){
+            String remove = request.getParameter("remove");
+            int remove_int = Integer.parseInt(remove);
+            shoppingCart.remove(remove_int);
         }
-        request.getSession().setAttribute("shoppingCart", shoppingCart);
-        request.getSession().setAttribute("total", price);
-        return pageToShow;
+
+
+            //calculate price after updates and deletes
+            int price = 0;
+            for (Cupcake c : shoppingCart) {
+                int tmp = (c.getPrice() * c.getAmount());
+                price += tmp;
+            }
+            // put the parameters back after updates and deletes.
+            request.getSession().setAttribute("shoppingCart", shoppingCart);
+            request.getSession().setAttribute("total", price);
+            return pageToShow;
+
+
     }
 }

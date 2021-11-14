@@ -10,6 +10,7 @@ public class Cupcake {
     int bot_price;
     int top_price;
 
+
     public Cupcake(String top, String bot, int amount) {
         this.top = top;
         this.bot = bot;

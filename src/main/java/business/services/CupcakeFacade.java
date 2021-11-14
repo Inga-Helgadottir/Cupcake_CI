@@ -20,16 +20,28 @@ public class CupcakeFacade {
     }
 
 
-    public void createOrder(User user, int price, Timestamp ts) throws UserException{
-        cupcakeMapper.createOrder(user,price,ts);
+    public Order createOrder(User user, int price, Timestamp ts) throws UserException {
+        return cupcakeMapper.createOrder(user, price, ts);
     }
 
     public Bot getBot(int botId) throws UserException {
         return cupcakeMapper.getBot(botId);
     }
 
+    public Bot getBot(String name) throws UserException {
+        return cupcakeMapper.getBot(name);
+    }
+
     public Top getTop(int topId) throws UserException {
         return cupcakeMapper.getTop(topId);
+    }
+
+    public Top getTop(String name) throws UserException {
+        return cupcakeMapper.getTop(name);
+    }
+
+    public int createCupcake(int bot_id, int top_id, int price, int amount) throws UserException {
+        return cupcakeMapper.createCupcake(bot_id, top_id, price, amount);
     }
 
     public List<Bot> getAllBottoms() throws UserException {
@@ -40,10 +52,16 @@ public class CupcakeFacade {
         return cupcakeMapper.getAllTops();
     }
 
-    public List<Order> getAllOrders() {
+    public List<Order> getAllOrders() throws UserException {
         return cupcakeMapper.getAllOrders();
     }
-    public void removeOrder(int order_id){
+
+    public void removeOrder(int order_id) throws UserException {
         cupcakeMapper.removeOrder(order_id);
+    }
+
+
+    public void createLink(int orderid, int cupcake_id, int amount) throws UserException {
+        cupcakeMapper.createLink(orderid, cupcake_id, amount);
     }
 }

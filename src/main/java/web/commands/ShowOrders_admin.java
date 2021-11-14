@@ -1,6 +1,7 @@
 package web.commands;
 
 import business.entities.Order;
+import business.exceptions.UserException;
 import business.services.CupcakeFacade;
 
 import javax.servlet.http.HttpServletRequest;
@@ -16,7 +17,7 @@ public class ShowOrders_admin extends CommandProtectedPage {
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
         List<Order> orderList = cupcakeFacade.getAllOrders();
         request.getSession().setAttribute("orderList", orderList);
         return pageToShow;

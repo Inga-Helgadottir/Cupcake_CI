@@ -1,9 +1,6 @@
 package web.commands;
 
-import business.entities.Bot;
-import business.entities.Cupcake;
-import business.entities.Top;
-import business.entities.User;
+import business.entities.*;
 import business.exceptions.UserException;
 import business.services.CupcakeFacade;
 import business.services.UserFacade;
@@ -31,8 +28,8 @@ public class CreateOrderCommand extends CommandProtectedPage {
     public String execute(HttpServletRequest request, HttpServletResponse response) {
         try {
             List<Cupcake> shoppingCart = (List<Cupcake>) request.getSession().getAttribute("shoppingCart");
-            if (shoppingCart == null){
-                request.setAttribute("error","Din indkøbskurv er tom");
+            if (shoppingCart == null) {
+                request.setAttribute("error", "Din indkøbskurv er tom");
                 return "shoppingcartpage";
             }
 
@@ -42,18 +39,23 @@ public class CreateOrderCommand extends CommandProtectedPage {
                 Date date = new Date();
                 long time = date.getTime();
                 Timestamp ts = new Timestamp(time);
-                cupcakeFacade.createOrder(user, price, ts);
+                Order order = cupcakeFacade.createOrder(user, price, ts);
+                int orderid = order.getOrder_id();
+                // udfyld cupcake tabel med alle cupcakes fra indkøbskurven.
+                for (Cupcake c : shoppingCart) {
+                    Top top = cupcakeFacade.getTop(c.getTop());
+                    Bot bot = cupcakeFacade.getBot(c.getBot());
+                    int cupcake_id = cupcakeFacade.createCupcake(bot.getBot_id(), top.getTop_id(), c.getPrice(), c.getAmount());
+                    cupcakeFacade.createLink(orderid, cupcake_id, c.getAmount());
+                }
                 shoppingCart.clear();
-                request.setAttribute("shoppingCart",shoppingCart);
-                request.setAttribute("total", 0);
-
-                //cupcakeFacade.createCupcake(shoppingCart);
-                //cupcakeFacade.createLink();  //maybe this should be done automatically ^one above^
-
+                request.getSession().setAttribute("shoppingCart", shoppingCart);
+                request.getSession().setAttribute("total", 0);
                 return pageToShow;
+            } else {
+                request.setAttribute("error", "du har ikke nok penge på din konto ");
+                return "shoppingcartpage";
             }
-            request.setAttribute("error", "du har ikke nok penge på din konto ");
-            return "shoppingcartpage";
 
         } catch (NumberFormatException | UserException ex) {
             request.setAttribute("error", ex.getMessage());

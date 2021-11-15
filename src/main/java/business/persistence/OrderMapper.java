@@ -44,7 +44,7 @@ public class OrderMapper {
 
     public void deleteOrder(int orderId) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "";
+            String sql = "DELETE FROM `orders` WHERE order_id=?";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
                 ps.setInt(1, orderId);

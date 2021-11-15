@@ -18,24 +18,29 @@
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle kunder:</h2>
             <div class="seeAllOrders">
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
-                <p class="customerInfo d-flex justify-content-between mt-5">Kundenavn
-                    <span> måske en email</span>
-                </p>
+                <table class="table mt-5 myTable">
+                    <thead>
+                    <tr>
+                        <th scope="col">User id</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Balance</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <c:forEach var="kundeItem" items="${applicationScope.kundeList}">
+                        <tr>
+                            <th scope="row">
+                                <input class="checkbox" type="checkbox" name="orderCheck" value="${kundeItem.id}" onclick="onlyOne(this)">
+                                ${kundeItem.id}
+                            </th>
+                            <td>${kundeItem.email}</td>
+                            <td>
+                                <input type="text" value="${kundeItem.balance}" class="balanceCheck">kr
+                            </td>
+                        </tr>
+                    </c:forEach>
+                    </tbody>
+                </table>
 
             </div>
             <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
@@ -43,6 +48,17 @@
                 <a href="${pageContext.request.contextPath}/fc/admin" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
             </div>
         </section>
+        <script>
+            function onlyOne(checkbox) {
+                //selects all the checkboxes
+                let checkboxes = document.getElementsByName("orderCheck");
+                //loops through them
+                checkboxes.forEach((item) => {
+                    //if this box is checked it unchecks all the others
+                    if (item !== checkbox) item.checked = false;
+                })
+            }
+        </script>
 
     </jsp:body>
 </t:genericpage>

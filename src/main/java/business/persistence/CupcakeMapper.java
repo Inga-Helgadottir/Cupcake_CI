@@ -237,6 +237,20 @@ public class CupcakeMapper {
         }
     }
 
+    public void changeOrderStatus(String status, int order_id) {
+        try (Connection connection = database.connect()) {
+            String sql = "update `order` set status=? where order_id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setString(1, status);
+                ps.setInt(2, order_id);
+                ps.executeUpdate();
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
     public void createLink(int orderid, int cupcake_id, int amount) throws UserException {
 
         try (Connection connection = database.connect()) {

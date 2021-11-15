@@ -34,5 +34,4 @@ public class Bot {
     public void setPrice(int price) {
         this.price = price;
     }
-
 }

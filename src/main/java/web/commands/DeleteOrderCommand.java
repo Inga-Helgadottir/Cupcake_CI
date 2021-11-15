@@ -24,7 +24,8 @@ public class DeleteOrderCommand extends CommandProtectedPage {
         int order_id = Integer.parseInt(request.getParameter("orderCheck"));
         List<Order> orderList = (List<Order>) request.getSession().getAttribute("orderList");
         orderList.removeIf(o -> o.getOrder_id() == order_id);
-        cupcakeFacade.removeOrder(order_id);
+        cupcakeFacade.changeOrderStatus("cancelled", order_id);// changes order status to cancelled.
+        //cupcakeFacade.removeOrder(order_id);
         request.getSession().setAttribute("orderList", orderList);
         return pageToShow;
     }

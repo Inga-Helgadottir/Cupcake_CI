@@ -64,4 +64,8 @@ public class CupcakeFacade {
     public void createLink(int orderid, int cupcake_id, int amount) throws UserException {
         cupcakeMapper.createLink(orderid, cupcake_id, amount);
     }
+
+    public void changeOrderStatus(String status, int order_id) throws UserException{
+        cupcakeMapper.changeOrderStatus(status, order_id);
+    }
 }

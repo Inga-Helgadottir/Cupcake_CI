@@ -25,6 +25,7 @@
                             <th scope="col">Order id</th>
                             <th scope="col">Price</th>
                             <th scope="col">User</th>
+                            <th scope="col">Date</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -35,6 +36,9 @@
                                     <input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}"
                                            onclick="onlyOne(this)">
                                         ${order.order_id}
+                                    <input hidden="hidden" name="" value=""/>
+                                    <input hidden="hidden" name="" value=""/>
+                                    <input hidden="hidden" name="" value=""/>
                                 </th>
                                 <td>${order.price}kr</td>
                                 <td>${sessionScope.user.email}</td>

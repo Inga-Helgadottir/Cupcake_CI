@@ -39,10 +39,8 @@ public abstract class Command
 
         commands.put("admin", new CommandProtectedPage("admin", "employee"));
         commands.put("adminpage", new CommandProtectedPage("admin", "employee"));
-//        commands.put("adminKunder", new CommandProtectedPage("admin_manage_kunder", "employee"));
 
         commands.put("adminKunder", new UpdateBalance("admin_manage_kunder", "employee"));
-
         commands.put("adminOrders", new AdminShowOrders("admin_manage_orders","employee"));
         commands.put("adminDeleteOrders", new AdminDeleteOrder("admin_manage_orders","employee"));
 

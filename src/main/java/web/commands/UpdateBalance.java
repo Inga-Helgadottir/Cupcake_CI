@@ -18,15 +18,24 @@ public class UpdateBalance extends CommandProtectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
-        int id = Integer.parseInt(request.getParameter("orderCheck"));
-        int balance = Integer.parseInt(request.getParameter("balanceCheck"));
-        System.out.println("here----------------------");
-        System.out.println(id + " " + balance);
+        try{
+            int id = Integer.parseInt(request.getParameter("orderCheck"));
+            int balance = Integer.parseInt(request.getParameter("inputSaldo" + id));
+            int index = Integer.parseInt(request.getParameter("index"));
+            System.out.println(id + " " + balance);
 
-        List<User> kundeList = (List<User>) request.getSession().getAttribute("kundeList");
-//        userFacade.updateBalance(balance, kundeId);
+            userFacade.updateBalance(balance, id);
 
-        request.getSession().setAttribute("kundeList", kundeList);
+            List<User> kundeList = (List<User>) request.getSession().getAttribute("kundeList");
+            User u = userFacade.getUserById(id);
+            u.setBalance(balance);
+//            System.out.println("--------------------------------" + index);
+//            kundeList.get(index).setBalance(balance);
+            request.getSession().setAttribute("kundeList", kundeList);
+
+        }catch(NumberFormatException e){
+            System.out.println(e.getMessage());
+        }
         return pageToShow;
     }
 }

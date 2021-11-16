@@ -89,11 +89,12 @@ public class UserMapper {
 
     public void updateBalance(int balance, int id) throws UserException {
         try (Connection connection = database.connect()) {
-            String sql = "UPDATE user SET balance = ? WHERE id = ?;";
+            String sql = "UPDATE user SET balance = ? WHERE user_id = ?;";
 
             try (PreparedStatement ps = connection.prepareStatement(sql)) {
-                ps.setString(1, "balance");
-                ps.setString(2, "user_id");
+                ps.setInt(1, balance);
+                ps.setInt(2, id);
+                ps.executeUpdate();
 
             } catch (SQLException ex) {
                 throw new UserException(ex.getMessage());
@@ -101,5 +102,31 @@ public class UserMapper {
         } catch (SQLException | UserException ex) {
             throw new UserException("Connection to database could not be established");
         }
+    }
+
+    public User getUserById(int id) throws UserException {
+        try (Connection connection = database.connect()) {
+            String sql = "SELECT * FROM user WHERE user_id = ?";
+
+            try (PreparedStatement ps = connection.prepareStatement(sql)) {
+                ps.setInt(1, id);
+
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    String email = rs.getString("email");
+                    String password = rs.getString("password");
+                    String role = rs.getString("role");
+                    int balance = rs.getInt("balance");
+                    int userId = rs.getInt("user_id");
+                    User u = new User(userId, email, password, role, balance);
+                    return u;
+                }
+            } catch (SQLException ex) {
+                throw new UserException(ex.getMessage());
+            }
+        } catch (SQLException | UserException ex) {
+            throw new UserException("Connection to database could not be established");
+        }
+        return null;
     }
 }

@@ -13,40 +13,42 @@
     </jsp:attribute>
 
     <jsp:body>
-        <%--        change to get from DB------------------------------%>
         <%--        change design after adding DB-------------------------------%>
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle kunder:</h2>
-            <div class="seeAllOrders">
-                <table class="table mt-5 myTable">
-                    <thead>
-                    <tr>
-                        <th scope="col">User id</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Balance</th>
-                    </tr>
-                    </thead>
-                    <tbody>
-                    <c:forEach var="kundeItem" items="${applicationScope.kundeList}">
+            <form action="${pageContext.request.contextPath}/fc/adminKunder" method="get">
+                <div class="seeAllOrders">
+                    <table class="table mt-5 myTable">
+                        <thead>
                         <tr>
-                            <th scope="row">
-                                <input class="checkbox" type="checkbox" name="orderCheck" value="${kundeItem.id}" onclick="onlyOne(this)">
-                                ${kundeItem.id}
-                            </th>
-                            <td>${kundeItem.email}</td>
-                            <td>
-                                <input type="text" value="${kundeItem.balance}" class="balanceCheck">kr
-                            </td>
+                            <th scope="col">User id</th>
+                            <th scope="col">Email</th>
+                            <th scope="col">Balance</th>
+                            <th scope="col">Change balance</th>
                         </tr>
-                    </c:forEach>
-                    </tbody>
-                </table>
-
-            </div>
-            <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
-                <a class="btnProfile btnAdminOrders btn btn-danger btn-lg">Slet kunde</a>
-                <a href="${pageContext.request.contextPath}/fc/admin" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
-            </div>
+                        </thead>
+                        <tbody>
+                            <c:forEach varStatus="status" var="kundeItem" items="${applicationScope.kundeList}">
+                                <tr>
+                                    <th scope="row">
+                                        <input class="checkbox" type="checkbox" name="orderCheck" value="${kundeItem.id}" onclick="onlyOne(this)">
+                                        ${kundeItem.id}
+                                    </th>
+                                    <td>${kundeItem.email}</td>
+                                    <td>
+                                        <input type="number" value="${kundeItem.balance}" name="inputSaldo${kundeItem.id}" class="balanceCheck">kr
+                                        <input type="hidden" value="${status.index}" name="index">
+                                    </td>
+                                </tr>
+                            </c:forEach>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="adminOrderBtns d-flex flex-row justify-content-between mt-4">
+                    <button type="submit" class="btnProfile btnAdminOrders btn btn-danger btn-lg">Ændre kunde</button>
+                    <a href="${pageContext.request.contextPath}/fc/admin" class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
+                </div>
+            </form>
         </section>
         <script>
             function onlyOne(checkbox) {

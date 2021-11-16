@@ -21,7 +21,6 @@ public class UpdateBalance extends CommandProtectedPage {
         try{
             int id = Integer.parseInt(request.getParameter("orderCheck"));
             int balance = Integer.parseInt(request.getParameter("inputSaldo" + id));
-            int index = Integer.parseInt(request.getParameter("index"));
             System.out.println(id + " " + balance);
 
             userFacade.updateBalance(balance, id);
@@ -29,8 +28,6 @@ public class UpdateBalance extends CommandProtectedPage {
             List<User> kundeList = (List<User>) request.getSession().getAttribute("kundeList");
             User u = userFacade.getUserById(id);
             u.setBalance(balance);
-//            System.out.println("--------------------------------" + index);
-//            kundeList.get(index).setBalance(balance);
             request.getSession().setAttribute("kundeList", kundeList);
 
         }catch(NumberFormatException e){

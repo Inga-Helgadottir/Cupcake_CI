@@ -16,7 +16,7 @@
         <%--        change design after adding DB-------------------------------%>
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle kunder:</h2>
-            <form action="${pageContext.request.contextPath}/fc/adminKunder" method="get">
+            <form action="${pageContext.request.contextPath}/fc/adminBalance" method="get">
                 <div class="seeAllOrders">
                     <table class="table mt-5 myTable">
                         <thead>
@@ -24,11 +24,10 @@
                             <th scope="col">User id</th>
                             <th scope="col">Email</th>
                             <th scope="col">Balance</th>
-                            <th scope="col">Change balance</th>
                         </tr>
                         </thead>
                         <tbody>
-                            <c:forEach varStatus="status" var="kundeItem" items="${applicationScope.kundeList}">
+                            <c:forEach varStatus="status" var="kundeItem" items="${sessionScope.kundeList}">
                                 <tr>
                                     <th scope="row">
                                         <input class="checkbox" type="checkbox" name="orderCheck" value="${kundeItem.id}" onclick="onlyOne(this)">
@@ -37,7 +36,6 @@
                                     <td>${kundeItem.email}</td>
                                     <td>
                                         <input type="number" value="${kundeItem.balance}" name="inputSaldo${kundeItem.id}" class="balanceCheck">kr
-                                        <input type="hidden" value="${status.index}" name="index">
                                     </td>
                                 </tr>
                             </c:forEach>

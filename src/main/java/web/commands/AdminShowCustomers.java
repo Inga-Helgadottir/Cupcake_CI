@@ -1,9 +1,6 @@
 package web.commands;
 
-import business.entities.Bot;
-import business.entities.Cupcake;
-import business.entities.Order;
-import business.entities.Top;
+import business.entities.*;
 import business.exceptions.UserException;
 import business.services.CupcakeFacade;
 import business.services.OrderFacede;
@@ -27,20 +24,11 @@ public class AdminShowCustomers extends CommandProtectedPage{
     }
 
     @Override
-    public String execute(HttpServletRequest request, HttpServletResponse response) {
+    public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
 
-        try {
-            List<Order> kundeList = (List<Order>) request.getSession().getAttribute("kundeList");
-
-            if (kundeList == null) {
-                kundeList = new ArrayList<>();
-            }
+            List<User> kundeList = userFacade.getAllUsers();
+            request.getSession().setAttribute("kundeList", kundeList);
 
             return pageToShow;
-
-        } catch (NumberFormatException ex) {
-            request.setAttribute("error", ex.getMessage());
-            return "admin";
-        }
     }
 }

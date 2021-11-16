@@ -51,7 +51,6 @@ public class AddToCartCommand extends CommandProtectedPage {
                 temp += temp2;
             }
             request.getSession().setAttribute("total", temp);
-
             return pageToShow;
 
         } catch (NumberFormatException | UserException ex) {

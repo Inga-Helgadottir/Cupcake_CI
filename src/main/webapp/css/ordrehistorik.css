@@ -1,0 +1,30 @@
+.seeAllMyOrders{
+    width:70%;
+    height:20%;
+    background-color: white;
+    padding:5%;
+}
+.orderHistoryBtnContainer{
+    display:grid;
+    place-items: end center;
+    width: 30%;
+}
+.orderHistoryBtn{
+    width: 90%;
+}
+@media only screen and (max-width: 943px) {
+    .historyContainer{
+        display: flex!important;
+        flex-direction: column!important;
+        justify-content: space-evenly!important;
+    }
+    .orderHistoryBtnContainer{
+        display:grid!important;
+        place-items: start!important;
+        margin-top:5%;
+        width: 100%;
+    }
+    .seeAllMyOrders{
+        width:90%;
+    }
+}

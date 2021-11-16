@@ -28,6 +28,7 @@ public class LoginCommand extends CommandUnprotectedPage {
             session.setAttribute("role", user.getRole());
             session.setAttribute("email", email);
 
+
             if (user.getRole().equals("employee")) {
                 page = "employeepage";
             } else {

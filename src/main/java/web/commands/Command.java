@@ -32,17 +32,18 @@ public abstract class Command {
         commands.put("cartpage", new CommandUnprotectedPage("shoppingcartpage"));
         commands.put("aboutpage", new CommandUnprotectedPage("about"));
         commands.put("profilepage", new CommandUnprotectedPage("customerpage"));
-        commands.put("adminOrders", new ShowOrders_admin("viewOrders_admin", "employee"));
+
 //--------- commands -------------------
+        commands.put("adminOrders", new ShowOrders_admin("viewOrders_admin", "employee"));
+        commands.put("adminKunder", new ShowCustomers_admin("viewcustomers_admin", "employee"));
         commands.put("addtocart", new AddToCartCommand("cartconfim", "customer"));
         commands.put("createorder", new CreateOrderCommand("orderconfimpage", "customer"));
         commands.put("updateshoppingcart", new UpdateShoppingCartCommand("shoppingcartpage"));
-        commands.put("deleteorder_admin", new DeleteOrderCommand("viewOrders_admin","employee"));
+        commands.put("deleteorder_admin", new DeleteOrderCommand("viewOrders_admin", "employee"));
+        commands.put("updatebalance", new UpdateBalanceCommand("viewcustomers_admin","employee"));
     }
 
-    public static Command fromPath(
-            HttpServletRequest request,
-            Database db) {
+    public static Command fromPath(HttpServletRequest request, Database db) {
         String action = request.getPathInfo().replaceAll("^/+", "");
         System.out.println("--> " + action);
 
@@ -50,13 +51,8 @@ public abstract class Command {
             database = db;
             initCommands(database);
         }
-
         return commands.getOrDefault(action, new CommandUnknown());   // unknowncommand is default
     }
 
-    public abstract String execute(
-            HttpServletRequest request,
-            HttpServletResponse response)
-            throws UserException;
-
+    public abstract String execute(HttpServletRequest request, HttpServletResponse response) throws UserException;
 }

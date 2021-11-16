@@ -34,6 +34,8 @@
                  <p><a href="${pageContext.request.contextPath}/fc/employeepage">Employee Page</a>
              </c:if>
 
+
+
              <c:if test="${sessionScope.role == 'customer' }">
                 <p style="font-size: larger">This is what you can do, since your
                     are logged in as a customer</p>

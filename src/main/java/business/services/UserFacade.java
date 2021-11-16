@@ -5,6 +5,8 @@ import business.persistence.Database;
 import business.persistence.UserMapper;
 import business.exceptions.UserException;
 
+import java.util.List;
+
 public class UserFacade {
     UserMapper userMapper;
 
@@ -22,5 +24,11 @@ public class UserFacade {
         return user;
     }
 
+    public List<User> getAllUsers() throws UserException {
+        return userMapper.getAllUsers();
+    }
 
+    public void updateBalance(int balance, int user_id) throws UserException {
+        userMapper.updateBalance(balance,user_id);
+    }
 }

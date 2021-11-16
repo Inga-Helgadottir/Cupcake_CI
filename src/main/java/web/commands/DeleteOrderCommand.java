@@ -23,9 +23,13 @@ public class DeleteOrderCommand extends CommandProtectedPage {
         //remove data point from link table first. Then remove the data links from order and cupcake tables.
         int order_id = Integer.parseInt(request.getParameter("orderCheck"));
         List<Order> orderList = (List<Order>) request.getSession().getAttribute("orderList");
-        orderList.removeIf(o -> o.getOrder_id() == order_id);
-        cupcakeFacade.changeOrderStatus("cancelled", order_id);// changes order status to cancelled.
-        //cupcakeFacade.removeOrder(order_id);
+
+        for (Order o : orderList) {
+            if (o.getOrder_id() == order_id) {
+                o.setStatus("cancelled");
+            }
+        }
+        cupcakeFacade.changeOrderStatus("cancelled", order_id);// changes order  status to cancelled.
         request.getSession().setAttribute("orderList", orderList);
         return pageToShow;
     }

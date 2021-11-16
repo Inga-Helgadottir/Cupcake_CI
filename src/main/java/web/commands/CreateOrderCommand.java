@@ -8,8 +8,6 @@ import business.services.UserFacade;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.sql.Timestamp;
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
 
@@ -51,6 +49,10 @@ public class CreateOrderCommand extends CommandProtectedPage {
                 shoppingCart.clear();
                 request.getSession().setAttribute("shoppingCart", shoppingCart);
                 request.getSession().setAttribute("total", 0);
+
+                int newBalance = user.getBalance() - price;
+                user.setBalance(newBalance);//opdaterer balance i user objekt
+                userFacade.updateBalance(newBalance,user.getId());//opdaterer balance i db.
                 return pageToShow;
             } else {
                 request.setAttribute("error", "du har ikke nok penge på din konto ");

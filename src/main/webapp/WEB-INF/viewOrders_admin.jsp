@@ -26,11 +26,11 @@
                             <th scope="col">Price</th>
                             <th scope="col">User</th>
                             <th scope="col">Date</th>
+                            <th scope="col">Status</th>
                         </tr>
                         </thead>
                         <tbody>
                         <c:forEach var="order" items="${sessionScope.orderList}">
-
                             <tr>
                                 <th scope="row">
                                     <input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}"
@@ -43,6 +43,7 @@
                                 <td>${order.price}kr</td>
                                 <td>${sessionScope.user.email}</td>
                                 <td>${order.ts}</td>
+                                <td>${order.status}</td>
                             </tr>
                         </c:forEach>
                         </tbody>
@@ -51,12 +52,24 @@
                         <button type="submit" name="delete"
                                 class="btnProfile btnAdminOrders btn btn-primary btn-lg">Slet ordre
                         </button>
-                        <a href="${pageContext.request.contextPath}/fc/admin"
+                        <a href="${pageContext.request.contextPath}/fc/employeepage"
                            class="btnProfile btnAdminOrders btn btn-primary btn-lg">Tilbage til admin manager</a>
                     </div>
                 </form>
             </div>
         </section>
+
+        <c:if test="${requestScope.error != null }">
+            <p style="color:red">
+                    ${requestScope.error}
+            </p>
+        </c:if>
+
+        <c:if test="${not empty param.msg}">
+            <p style="font-size: large">${param.msg}</p>
+        </c:if>
+
+
         <script>
             //<input class="checkbox" type="checkbox" name="orderCheck" value="${order.order_id}" onclick="onlyOne(this)">
             function onlyOne(checkbox) {

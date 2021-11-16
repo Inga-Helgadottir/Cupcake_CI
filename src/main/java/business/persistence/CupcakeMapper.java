@@ -208,7 +208,9 @@ public class CupcakeMapper {
                     int user_id = rs.getInt("user_id");
                     int price = rs.getInt("price");
                     Timestamp timestamp = rs.getTimestamp("created");
+                    String status = rs.getString("status");
                     Order order = new Order(order_id, user_id, price, timestamp);
+                    order.setStatus(status);
                     orderList.add(order);
                 }
                 return orderList;

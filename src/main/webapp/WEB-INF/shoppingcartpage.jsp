@@ -64,8 +64,8 @@
                 <p class="cupcakeKind d-flex justify-content-between mt-5">I alt:
                     <span class="pris">${sessionScope.total}kr</span>
                 </p>
-                <a href="${pageContext.request.contextPath}/fc/createorder" class="tjekBtn btn btn-danger">Tjek ud</a>
-
+<%--                <a href="${pageContext.request.contextPath}/fc/createorder" class="tjekBtn btn btn-danger">Tjek ud</a>--%>
+                <a href="createorder" class="tjekBtn btn btn-danger">Tjek ud</a>
 
             </div>
         </div>

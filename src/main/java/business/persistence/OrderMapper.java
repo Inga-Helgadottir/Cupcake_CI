@@ -32,8 +32,8 @@ public class OrderMapper {
                     String topName = rs.getString("topName");
                     String botName = rs.getString("botName");
                     Timestamp ts = rs.getTimestamp("date");
-                    Order o = new Order(oId, price, quantity, email, topName, botName, ts);
-                    orderList.add(o);
+//                    Order o = new Order(oId, price, quantity, email, topName, botName, ts);
+//                    orderList.add(o);
                 }
                 return orderList;
             }

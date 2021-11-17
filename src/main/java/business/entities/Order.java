@@ -1,32 +1,67 @@
 package business.entities;
 
 import java.sql.Timestamp;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Order {
-    int orderId;
+    int order_id;
+    int user_id;
     int price;
-    int quantity;
-    String userEmail;
-    String topName;
-    String botName;
-    Timestamp date;
+    Timestamp ts;
+    private List<Cupcake> orderItems;
+    String status;
 
-    public Order(int orderId, int price, int quantity, String userEmail, String topName, String botName, Timestamp date) {
-        this.orderId = orderId;
+    public Order(int order_id, int user_id, int price, Timestamp ts) {
+        this.order_id = order_id;
+        this.user_id = user_id;
         this.price = price;
-        this.quantity = quantity;
-        this.userEmail = userEmail;
-        this.topName = topName;
-        this.botName = botName;
-        this.date = date;
+        this.ts = ts;
+        this.orderItems = new ArrayList<>();
     }
 
-    public int getOrderId() {
-        return orderId;
+    public List<Cupcake> getOrdreItems() {
+        return orderItems;
     }
 
-    public void setOrderId(int orderId) {
-        this.orderId = orderId;
+    public void setOrderItems(List<Cupcake> orderItems) {
+        this.orderItems = orderItems;
+    }
+
+    public List<Cupcake> getOrderItems() {
+        return orderItems;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    public void addToOrderItems(Cupcake cupcake) {
+        this.orderItems.add(cupcake);
+    }
+
+    public void removeFromOrderItems(Cupcake cupcake) {
+        this.orderItems.remove(cupcake);
+    }
+
+    public int getOrder_id() {
+        return order_id;
+    }
+
+    public void setOrder_id(int order_id) {
+        this.order_id = order_id;
+    }
+
+    public int getUser_id() {
+        return user_id;
+    }
+
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
     }
 
     public int getPrice() {
@@ -37,44 +72,11 @@ public class Order {
         this.price = price;
     }
 
-    public int getQuantity() {
-        return quantity;
+    public Timestamp getTs() {
+        return ts;
     }
 
-    public void setQuantity(int quantity) {
-        this.quantity = quantity;
+    public void setTs(Timestamp ts) {
+        this.ts = ts;
     }
-
-    public String getUserEmail() {
-        return userEmail;
-    }
-
-    public void setUserEmail(String userEmail) {
-        this.userEmail = userEmail;
-    }
-
-    public String getTopName() {
-        return topName;
-    }
-
-    public void setTopName(String topName) {
-        this.topName = topName;
-    }
-
-    public String getBotName() {
-        return botName;
-    }
-
-    public void setBotName(String botName) {
-        this.botName = botName;
-    }
-
-    public Timestamp getDate() {
-        return date;
-    }
-
-    public void setDate(Timestamp date) {
-        this.date = date;
-    }
-
 }

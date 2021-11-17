@@ -30,6 +30,8 @@ public abstract class Command
         commands.put("indbetal", new CommandUnprotectedPage("indbetal_penge"));
         commands.put("orders", new CommandUnprotectedPage("orders"));
         commands.put("bestil", new CommandUnprotectedPage("bestil_cupcakespage"));
+        commands.put("about", new CommandUnprotectedPage("about"));
+        commands.put("udvalg", new CommandUnprotectedPage("udvalg"));
 
         commands.put("logincommand", new LoginCommand(""));
         commands.put("logoutcommand", new LogoutCommand(""));

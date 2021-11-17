@@ -10,7 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title><jsp:invoke fragment="header"/></title>
-    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/images/favicon.png">
+<%--    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/images/favicon.png">--%>
+    <link rel="icon" type="image/png" href="<%=request.getContextPath()%>/images/favicon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -26,6 +27,8 @@
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/adminOrders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ordrehistorik.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/indbetal.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/orders.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/udvalg.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -41,13 +44,15 @@
             </p>
         </div>
         <nav class="my-2 my-md-0 me-md-3">
-            <a class="p-2 text-dark text-decoration-none saldo">Saldo: ----</a>
+            <c:if test=" ${sessionScope.user.role != 'employee'}">
+                <a class="p-2 text-dark text-decoration-none saldo">Saldo: ${sessionScope.user.balance}</a>
+            </c:if>
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark text-decoration-none" href="<%=request.getContextPath()%>">Home</a>
             </c:if>
             <a class="p-2 text-dark text-decoration-none" href="${pageContext.request.contextPath}/fc/orders">Orders</a>
             <a class="p-2 text-dark text-decoration-none" href="${pageContext.request.contextPath}/fc/profile">Profile</a>
-            <a class="p-2 text-dark text-decoration-none" href="#">About</a>
+            <a class="p-2 text-dark text-decoration-none" href="${pageContext.request.contextPath}/fc/about">About</a>
         </nav>
         <div class="btns">
 

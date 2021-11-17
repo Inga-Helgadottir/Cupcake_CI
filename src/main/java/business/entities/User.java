@@ -9,14 +9,6 @@ public class User
     private String role;
     private int balance;
 
-    public User(int id, String email, String password, String role, int balance) {
-        this.id = id;
-        this.email = email;
-        this.password = password;
-        this.role = role;
-        this.balance = balance;
-    }
-
     public User(String email, String password, String role)
     {
         this.email = email;

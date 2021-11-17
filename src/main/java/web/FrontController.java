@@ -57,10 +57,6 @@ public class FrontController extends HttpServlet
             getServletContext().setAttribute("topList", topList);
             List<Bot> botList = cupcakeFacade.getAllBottoms();
             getServletContext().setAttribute("botList", botList);
-//            List<Order> orderList = orderFacede.getAllOrders();
-//            getServletContext().setAttribute("orderList", orderList);
-//            List<User> kundeList = userFacade.getAllUsers();
-//            getServletContext().setAttribute("kundeList", kundeList);
 
         } catch (UserException exception) {
             exception.printStackTrace();

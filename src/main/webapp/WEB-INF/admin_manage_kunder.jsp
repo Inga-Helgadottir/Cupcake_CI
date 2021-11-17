@@ -13,7 +13,6 @@
     </jsp:attribute>
 
     <jsp:body>
-        <%--        change design after adding DB-------------------------------%>
         <section class="bodyBg d-flex flex-column justify-content-around">
             <h2 class="display-4 mb-3 orderH2">Alle kunder:</h2>
             <form action="${pageContext.request.contextPath}/fc/adminBalance" method="get">

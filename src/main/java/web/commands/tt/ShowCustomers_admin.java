@@ -1,9 +1,10 @@
-package web.commands;
+package web.commands.tt;
 
 import business.entities.Order;
 import business.entities.User;
 import business.exceptions.UserException;
 import business.services.UserFacade;
+import web.commands.CommandProtectedPage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

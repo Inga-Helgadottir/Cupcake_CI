@@ -1,8 +1,9 @@
-package web.commands;
+package web.commands.tt;
 
 import business.entities.Order;
 import business.exceptions.UserException;
 import business.services.CupcakeFacade;
+import web.commands.CommandProtectedPage;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;

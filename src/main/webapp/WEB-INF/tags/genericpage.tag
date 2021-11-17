@@ -12,6 +12,7 @@
     <title>
         <jsp:invoke fragment="header"/>
     </title>
+    <link rel="icon" type="image/x-icon" href="<%=request.getContextPath()%>/images/favicon.png">
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
@@ -44,8 +45,10 @@
         </div>
         <nav class="my-2 my-md-0 me-md-3">
 
-            <a class="p-2 text-dark text-decoration-none saldo">Saldo: ${sessionScope.user.balance}</a>
 
+            <c:if test=" ${sessionScope.user.role == 'customer'}">
+                <a class="p-2 text-dark text-decoration-none saldo">Saldo: ${sessionScope.user.balance}</a>
+            </c:if>
 
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark text-decoration-none" href="<%=request.getContextPath()%>">Home</a>

@@ -29,8 +29,23 @@
                         </tr>
                         </thead>
                         <tbody>
+                        <h2 class="customerInfo d-flex justify-content-between mt-5">order
+                            <span> 5kr</span>
+                        </h2>
+                        <p class="customerInfo d-flex justify-content-between mt-5">order
+                            <span> 5kr</span>
+                        </p>
+                        <p class="customerInfo d-flex justify-content-between mt-5">order
+                            <span> 5kr</span>
+                        </p>
+                        <p class="customerInfo d-flex justify-content-between mt-5">order
+                            <span> 5kr</span>
+                        </p>
+                        <p class="customerInfo d-flex justify-content-between mt-5">order
+                            <span> 5kr</span>
+                        </p><!--
                         <c:forEach var="orderItem" items="${sessionScope.orderList}">
-                            <c:if test="${sessionScope.user.id == applicationScope.orderList.id}">
+                            <c:if test="${sessionScope.user.id == sessionScope.orderList.id}">
                                 <tr>
                                     <th scope="row">
                                         ${orderItem.orderId}
@@ -42,7 +57,7 @@
                                     <td>${orderItem.botName}</td>
                                 </tr>
                             </c:if>
-                        </c:forEach>
+                        </c:forEach>-->
                         </tbody>
                     </table>
                 </div>

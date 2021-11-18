@@ -5,7 +5,7 @@
 <t:genericpage>
 
     <jsp:attribute name="header">
-         Home
+         About
     </jsp:attribute>
 
     <jsp:attribute name="footer">
@@ -14,21 +14,43 @@
 
     <jsp:body>
 
-        <div class="bodyBg">
-            <h2 class="display-4">OM OS</h2>
+        <h1 class="display-4">
+            <div style="text-align: center;">About us</div>
+        </h1>
 
-            <p class="lead velkommenP">
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-                Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
-                when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-                It has survived not only five centuries, but also the leap into electronic typesetting,
-                remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
-                sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
-                Aldus PageMaker including versions of Lorem Ipsum.
+        <div class="bodyBgOrders col-lg-12">
+            <div style="text-align: center;"><img src="${pageContext.request.contextPath}/images/cupcake_shop.jpg"></div>
+            <p>About us flavortext. About us flavortext. About us flavortext. About us flavortext. About us flavortext.
+                About us flavortext. About us flavortext. About us flavortext. About us flavortext. About us flavortext.
+                About us flavortext. About us flavortext. About us flavortext. About us flavortext. About us flavortext.
+                About us flavortext. About us flavortext. About us flavortext. About us flavortext. About us flavortext.
+                About us flavortext. About us flavortext. About us flavortext. About us flavortext. About us flavortext.
+                About us flavortext. About us flavortext. About us flavortext.About us flavortext.About us
+                flavortext.About
+                us flavortext.About us flavortext.
+                About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us
+                flavortext.About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us flavortext.About us flavortext.
+                About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us
+                flavortext.About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us flavortext.
+                About us flavortext.About us flavortext.About us flavortext.About us flavortext.About us
+                flavortext.About us
+                flavortext.About us flavortext.About us flavortext.About us flavortext.
             </p>
 
-
+            <div style="text-align: center;"><p></p></div>
+            <div style="text-align: center;"><p>Olsker Cupcakes</p></div>
+            <div style="text-align: center;"><p>Nørgaardsvej 30</p></div>
+            <div style="text-align: center;"><p>2800 Kongens Lyngby</p></div>
+            <div style="text-align: center;"><p>TLF: 87654321 - CVR: 12345678</p></div>
+            <div style="text-align: center;"><p>Email: kontakt@olskercupcakes.dk</p></div>
         </div>
+
 
     </jsp:body>
 </t:genericpage>

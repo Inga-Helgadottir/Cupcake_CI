@@ -9,7 +9,7 @@ public class Order {
     int user_id;
     int price;
     Timestamp ts;
-    private List<Cupcake> orderItems;
+    private List<Cupcake> cupcakes;
     String status;
 
     public Order(int order_id, int user_id, int price, Timestamp ts) {
@@ -17,19 +17,16 @@ public class Order {
         this.user_id = user_id;
         this.price = price;
         this.ts = ts;
-        this.orderItems = new ArrayList<>();
+        this.cupcakes = new ArrayList<>();
     }
 
-    public List<Cupcake> getOrdreItems() {
-        return orderItems;
-    }
 
     public void setOrderItems(List<Cupcake> orderItems) {
-        this.orderItems = orderItems;
+        this.cupcakes = orderItems;
     }
 
     public List<Cupcake> getOrderItems() {
-        return orderItems;
+        return cupcakes;
     }
 
     public String getStatus() {
@@ -41,11 +38,11 @@ public class Order {
     }
 
     public void addToOrderItems(Cupcake cupcake) {
-        this.orderItems.add(cupcake);
+        this.cupcakes.add(cupcake);
     }
 
     public void removeFromOrderItems(Cupcake cupcake) {
-        this.orderItems.remove(cupcake);
+        this.cupcakes.remove(cupcake);
     }
 
     public int getOrder_id() {

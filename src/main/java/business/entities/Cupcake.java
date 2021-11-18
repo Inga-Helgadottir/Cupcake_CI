@@ -1,7 +1,8 @@
 package business.entities;
 
 public class Cupcake {
-
+    int bot_id;
+    int top_id;
     String top;
     String bot;
     int amount;
@@ -11,12 +12,34 @@ public class Cupcake {
     int top_price;
 
 
+    public Cupcake(int top, int bot, int amount) {
+        this.top_id = top;
+        this.bot_id = bot;
+        this.amount = amount;
+    }
     public Cupcake(String top, String bot, int amount) {
         this.top = top;
         this.bot = bot;
         this.amount = amount;
     }
 
+
+
+    public int getBot_id() {
+        return bot_id;
+    }
+
+    public void setBot_id(int bot_id) {
+        this.bot_id = bot_id;
+    }
+
+    public int getTop_id() {
+        return top_id;
+    }
+
+    public void setTop_id(int top_id) {
+        this.top_id = top_id;
+    }
 
     public String getBot() {
         return bot;

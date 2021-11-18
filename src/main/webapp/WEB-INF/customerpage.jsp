@@ -3,17 +3,22 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <t:genericpage>
+
     <jsp:attribute name="header">
-         Demo Page for Customer Roles
+         Profile
     </jsp:attribute>
+
     <jsp:attribute name="footer">
+        <c:set var="addHomeLink" value="${false}" scope="request"/>
     </jsp:attribute>
 
     <jsp:body>
-        <h1>Hello ${sessionScope.email} </h1>
-        You are now logged in as a Customer of our wonderful site.
-        Role: ${sessionScope.role}
+        <div class="bodyBg">
+            <div class="btnOptions d-flex justify-content-around flex-column mt-4">
+                <a href="${pageContext.request.contextPath}/fc/ordrehistorik" class="btnProfile btn btn-sm btn-primary btn-lg mb-5">Orderhistorik</a>
+                <a href="${pageContext.request.contextPath}/fc/indbetal" class="btnProfile btn btn-sm btn-primary btn-lg mb-5">Indbetal penge</a>
+            </div>
+        </div>
+
     </jsp:body>
-
 </t:genericpage>
-

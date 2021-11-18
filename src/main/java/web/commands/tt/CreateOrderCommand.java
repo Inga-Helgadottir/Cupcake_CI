@@ -46,6 +46,8 @@ public class CreateOrderCommand extends CommandProtectedPage {
                     Bot bot = cupcakeFacade.getBot(c.getBot());
                     int cupcake_id = cupcakeFacade.createCupcake(bot.getBot_id(), top.getTop_id(), c.getPrice(), c.getAmount());
                     cupcakeFacade.createLink(orderid, cupcake_id, c.getAmount());
+                    //ikke nødvendigt
+                    order.addToOrderItems(c);
                 }
                 shoppingCart.clear();
                 request.getSession().setAttribute("shoppingCart", shoppingCart);

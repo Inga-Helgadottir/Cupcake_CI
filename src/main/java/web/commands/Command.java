@@ -32,7 +32,10 @@ public abstract class Command {
         commands.put("orderpage", new CommandUnprotectedPage("orderpage"));
         commands.put("cartpage", new CommandUnprotectedPage("shoppingcartpage"));
         commands.put("aboutpage", new CommandUnprotectedPage("about"));
-        commands.put("profilepage", new CommandUnprotectedPage("customerpage"));
+        commands.put("profilepage", new CommandProtectedPage("customerpage", "customer"));
+        commands.put("ordrehistorik", new CommandProtectedPage("orderhistory_user", "customer"));
+        commands.put("indbetal", new CommandProtectedPage("money", "customer"));
+        commands.put("udvalg", new CommandUnprotectedPage("udvalg"));
 
 //--------- commands -------------------
         commands.put("adminOrders", new ShowOrders_admin("viewOrders_admin", "employee"));

@@ -24,7 +24,7 @@
             <div class="btnOptions">
                 <a href="${pageContext.request.contextPath}/fc/orderpage" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Bestil cupcakes</a>
 
-                <a href="#" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Se udvalg</a>
+                <a href="${pageContext.request.contextPath}/fc/udvalg" type="button" class="btn btn-sm btn-primary btn-lg mb-5" >Se udvalg</a>
 
             </div>
 

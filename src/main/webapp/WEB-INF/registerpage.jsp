@@ -4,42 +4,41 @@
 
 <t:genericpage>
     <jsp:attribute name="header">
-         Register as new User
+         Register a new user
     </jsp:attribute>
+
     <jsp:attribute name="footer">
     </jsp:attribute>
+
     <jsp:body>
-        <div style="margin-top: 5em;">
-            <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="POST">
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="email">Email</label>
-                    <div class="col-sm-4">
-                        <input id="email" class="form-control" type="text" name="email" value="${param.email}" placeholder="Enter a valid email">
-                    </div>
+        <form name="login" action="${pageContext.request.contextPath}/fc/registercommand" method="post" class="mb-3 d-flex flex-column bodyBg">
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <lable class="loginEmail loginFormText input-group-text" for="email">Email</lable>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password1">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password1" class="form-control" type="password" name="password1"  value="${param.password1}"  placeholder="Enter your password">
-                    </div>
+                <input type="text" class="loginInput form-control" name="email" value="${param.email}" placeholder="Enter a valid email">
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <lable class="loginFormText input-group-text" for="password1">Password</lable>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-sm-1 col-form-label" for="password2">Password</label>
-                    <div class="col-sm-4">
-                        <input id="password2" class="form-control" type="password" name="password2" value="${param.password2}"  placeholder="Repeat the password">
-                    </div>
+                <input type="password" class="loginInput form-control" name="password1" value="${param.password1}" placeholder="Enter your password">
+            </div>
+            <div class="d-flex justify-content-start mb-4">
+                <div class="input-group-prepend">
+                    <lable class="loginFormText input-group-text" for="password2">Password</lable>
                 </div>
+                <input type="password" class="loginInput form-control" name="password2" value="${param.password2}" placeholder="Repeat the password">
+            </div>
+            <div class="btnOptions d-flex justify-content-start">
+                <button type="submit" id="btnSignup" class="btn btn-primary btn-lg mb-5">Signup</button>
+            </div>
+        </form>
 
-                <input class="btn btn-primary" type="submit" type="submit" value="Submit">
-            </form>
-
-            <c:if test="${requestScope.error != null }">
-                <p style="color:red">
-                        ${requestScope.error}
-                </p>
-            </c:if>
-        </div>
+        <c:if test="${requestScope.error != null }">
+            <p style="color:red">
+                    ${requestScope.error}
+            </p>
+        </c:if>
     </jsp:body>
 </t:genericpage>
-
-

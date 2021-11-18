@@ -17,18 +17,19 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
 
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/adminOrders.css.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/adminOrders.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/bestil.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/header.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/indbetal.css.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/indbetal.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/index.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/kurv.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/login.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/orders.css">
-    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ordrehistorik.css.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/ordrehistorik.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/profile.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/styles.css">
     <link rel="stylesheet" href="<%=request.getContextPath()%>/css/tak.css">
+    <link rel="stylesheet" href="<%=request.getContextPath()%>/css/udvalg.css">
     <meta name="theme-color" content="#7952b3">
 </head>
 <body>
@@ -46,9 +47,8 @@
         <nav class="my-2 my-md-0 me-md-3">
 
 
-            <c:if test=" ${sessionScope.user.role == 'customer'}">
-                <a class="p-2 text-dark text-decoration-none saldo">Saldo: ${sessionScope.user.balance}</a>
-            </c:if>
+            <a class="p-2 text-dark text-decoration-none saldo">Saldo: ${sessionScope.user.balance}</a>
+
 
             <c:if test="${addHomeLink == null }">
                 <a class="p-2 text-dark text-decoration-none" href="<%=request.getContextPath()%>">Home</a>

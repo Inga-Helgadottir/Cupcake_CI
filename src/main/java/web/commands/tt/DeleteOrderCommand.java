@@ -20,17 +20,18 @@ public class DeleteOrderCommand extends CommandProtectedPage {
 
     @Override
     public String execute(HttpServletRequest request, HttpServletResponse response) throws UserException {
+        if (request.getParameter("orderCheck") != null) {
 
-        //remove data point from link table first. Then remove the data links from order and cupcake tables.
+        }
         int order_id = Integer.parseInt(request.getParameter("orderCheck"));
         List<Order> orderList = (List<Order>) request.getSession().getAttribute("orderList");
 
         for (Order o : orderList) {
             if (o.getOrder_id() == order_id) {
-                o.setStatus("cancelled");
+                o.setStatus("cancelled");// changes order status to cancelled in sessionscope.
             }
         }
-        cupcakeFacade.changeOrderStatus("cancelled", order_id);// changes order  status to cancelled.
+        cupcakeFacade.changeOrderStatus("cancelled", order_id);//change order status in db.
         request.getSession().setAttribute("orderList", orderList);
         return pageToShow;
     }

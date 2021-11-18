@@ -1,13 +1,11 @@
 package business.services;
 
-import business.entities.Bot;
-import business.entities.Order;
-import business.entities.Top;
-import business.entities.User;
+import business.entities.*;
 import business.exceptions.UserException;
 import business.persistence.CupcakeMapper;
 import business.persistence.Database;
 
+import javax.persistence.criteria.CriteriaBuilder;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -67,5 +65,12 @@ public class CupcakeFacade {
 
     public void changeOrderStatus(String status, int order_id) throws UserException{
         cupcakeMapper.changeOrderStatus(status, order_id);
+    }
+
+    public List<Integer> getCupcakeIds(int order_id)throws UserException{
+        return cupcakeMapper.getCupcakeIds(order_id);
+    }
+    public Cupcake getOrderLine(int cupcake_id) throws UserException{
+        return cupcakeMapper.getOrderLine(cupcake_id);
     }
 }

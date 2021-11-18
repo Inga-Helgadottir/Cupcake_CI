@@ -29,14 +29,12 @@ public class UpdateShoppingCartCommand extends CommandUnprotectedPage {
             shoppingCart.get(index_shoppingcart).setAmount(amount_int);
         }
 
-
         //remove item from shoppingCart
         if (request.getParameter("remove") != null) {
             String remove = request.getParameter("remove");
             int remove_int = Integer.parseInt(remove);
             shoppingCart.remove(remove_int);
         }
-
 
         //calculate price after updates and deletes
         int price = 0;

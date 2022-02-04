@@ -37,9 +37,6 @@ public class FrontController extends HttpServlet
                 Logger.getLogger("web").log(Level.SEVERE, ex.getMessage(), ex);
             }
         }
-
-        // Initialize whatever global datastructures needed here:
-
     }
 
     protected void processRequest(
